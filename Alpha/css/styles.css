@@ -1,6 +1,7 @@
 body {
 	background-color: #212121;
 	color: white;
+	margin: 1.5rem;
 }
 
 h1 {
@@ -10,5 +11,15 @@ h1 {
 }
 
 a {
-	align-self: center;
+	text-align: center;
 }
+
+video {
+background: red;
+margin: auto 300px;
+}
+
+.main-div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+} 
