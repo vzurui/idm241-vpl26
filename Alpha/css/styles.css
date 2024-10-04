@@ -1,7 +1,17 @@
+@font-face {
+	font-family: 'comfortaa';
+	src: url(../fonts/comfortaa/Comfortaa-Light.ttf) format('truetype');
+	font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
+	font-family: 'comfortaa', 'Courier New', Courier, monospace;
 	background-color: #212121;
 	color: white;
 	margin: 1.5rem;
+	line-height: 1.5;
 }
 
 h1 {
@@ -10,16 +20,42 @@ h1 {
 	background-color: black;
 }
 
-a {
+h2 {
+	line-height: 0.8;
+}
+
+li {
+	line-height: 1.5;
+}
+
+p {
+	text-decoration: underline;
+}
+
+.section {
+	margin: 0 0 2.5rem 0;
+}
+
+#spotify {
 	text-align: center;
 }
 
-video {
-background: red;
-margin: auto 300px;
+.tinashe {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: auto; 
 }
+
+
+@media screen
+and (min-width: 1000px) {
 
 .main-div {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-} 
+	column-gap: 130px;
+	margin: 2rem;
+	}
+}
