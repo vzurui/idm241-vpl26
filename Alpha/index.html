@@ -8,26 +8,34 @@
 <body>
 
 <h1>Alpha Description</h1>
-
+	
+<p id="interaction">Interaction: Add to Your Library</p>
+	
+<div class="tinashe">
+	<video  width="800" height="600" controls>
+			<source src="./videos/Spotify Microinteraction.mov">
+	</video>
+	</div>
 <p id="spotify"><a href="https://open.spotify.com/">https://open.spotify.com/</a></p>
 
-<div class="main-div">
-	<div class="first-div">
-<h2>TRIGGER</h2>
-<div class="section">
-<p>Save Library - Default</p>
-	<ul>
-		<li>
-			Hover ON
-			<ul>
-				<li> 1 second delay</li>
-			</ul>
-		</li>
-		<li>Hover OFF</li>
-		<li>Mouse Down</li>
-		<li>Mouse Up</li>
-		<li>Mouse Click</li>
-	</ul>
+
+
+<div class="container">
+<div class="box">
+	<h2>TRIGGER</h2>
+	<p>Save Library - Default</p>
+		<ul>
+			<li>
+				Hover ON
+				<ul>
+					<li> 1 second delay</li>
+				</ul>
+			</li>
+			<li>Hover OFF</li>
+			<li>Mouse Down</li>
+			<li>Mouse Up</li>
+			<li>Mouse Click</li>
+		</ul>
 
 	<p>Save Library - Active</p>
 		<ul>
@@ -42,9 +50,10 @@
 			<li>Mouse Up</li>
 			<li>Mouse Click</li>
 		</ul>
-	</div>
+</div>
+
+<div class="box">
 <h2>RULES</h2>
-<div class="section">
 		<p>Save Library - Default</p>
 		<ul>
 			<li>Hover ON - Cursor changes to finger, scale changes to 110%</li>
@@ -71,12 +80,11 @@
 			<li>Mouse Click - Icon fills in with green, changes to check mark, confetti pops out</li>
 			<li>Database record flag set to "FALSE"</li>
 		</ul>
-	</div>
-		</div>
+</div>
+	
 
-<div class="second-div">
+<div class="box">
 	<h2>FEEDBACK</h2>
-<div class="section">
 	<p>Save Library - Default</p>
 	<ul>
 		<li>Hover ON - Cursor changes to finger, scale changes to 110%</li>
@@ -102,6 +110,8 @@
 		<li>Mouse Click - Icon fills in with green, changes to check mark, confetti pops out</li>
 	</ul>
 </div>
+
+<div class="box">
 	<h2>LOOPS &amp; MODES</h2>
 	<div class="section">
 	<p>Loops</p>
@@ -117,11 +127,5 @@
 		</div>
 	</div>
 </div>
-
-<div class="tinashe">
-<video  width="800" height="600" controls>
-		<source src="./videos/Spotify Microinteraction.mov">
-</video>
-</div>
 </body>
-</html>
+	</html>
