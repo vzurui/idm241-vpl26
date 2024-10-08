@@ -19,7 +19,7 @@ h1 {
 	color: #1db954;
 	text-align: center;
 	background-color: #121212;
-	padding: 50px;
+	padding: 45px;
 	margin: -30px;
 }
 
@@ -43,7 +43,7 @@ li {
 p {
 	font-size: 2vh;
 	text-decoration: underline;
-	margin-top: 3em;
+	margin: 3em 0 -1em 0;
 } 
 
 video {
