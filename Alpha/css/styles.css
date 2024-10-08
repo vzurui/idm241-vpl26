@@ -101,11 +101,13 @@ margin: 0rem 0 -1rem 0;
 	margin: -0.75rem;
 }
 
-/* Responsive */
+/* media queries */
 @media screen
-and (max-width: 912px) {
+and (max-width: 1000px) {
 	.container {
-			flex-direction: column;
-			row-gap: 70px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 60px;
 	}
+
 }
