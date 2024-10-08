@@ -103,7 +103,7 @@ margin: 0rem 0 -1rem 0;
 
 /* Responsive */
 @media screen
-and (max-width: 912px) {
+and (min-width: 912px) {
 	.container {
 			flex-direction: column;
 			row-gap: 70px;
