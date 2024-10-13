@@ -12,92 +12,106 @@
 	box-sizing: border-box;
 }
 
-/* body {
-	background-color: #212121;
-} */
-
 body {
   display: flex;
   justify-content: center;
-  margin: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #121721, #000);
-  font: 1em verdana, sans-serif;
+  font: sans-serif;
+  /* Hide the scroll bar */
+  overflow: hidden; 
+  background-color: #212121;
 }
 
-/* .button {
-  border: 2px solid #b3b3b3;
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  margin: 4em;
-  padding: -10px;
-  background-color: #121212;
-} */
-
-/* button:active {
-  background-color: #1db954;
-}
- */
-
-[id='toggle-heart'] {
+/* This hides the checkbox - it's just a trick to move it offscreen */
+#icon {
   position: absolute;
   left: -100vw;
 }
-[id='toggle-heart']:checked + label {
-  color: #1db954;
-  will-change: font-size;
-  animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+
+/* If the checkbox is checked, get the icon label, make it green AND the border green, and start the animation. This animation timing is inherited by the pseudo-elements (the bubble and the particle). See the animation: inherit below */
+[id="icon"]:checked + label {
+  color: 	#212121;
+  background-color: #1db954;
+  border-color: #212121;
+  animation: 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
 }
-[id='toggle-heart']:checked + label:before, [id='toggle-heart']:checked + label:after {
+
+/* This controls the animation of the pseudo-elements aka the bubble and the particles */
+[id="icon"]:checked + label:before, [id="icon"]:checked + label:after {
   animation: inherit;
+  /* ease-out makes the bubble and particles slow down at the end of the animation*/
   animation-timing-function: ease-out;
 }
-[id='toggle-heart']:checked + label:before {
-  will-change: transform, border-width, border-color;
+
+/* If the checkbox is checked, start the bubble animation */
+[id="icon"]:checked + label:before {
   animation-name: bubble;
 }
-[id='toggle-heart']:checked + label:after {
-  will-change: opacity, box-shadow;
+
+/* If the checkbox is checked, start the particles animation */
+[id='icon']:checked + label:after {
   animation-name: particles;
 }
 
-[for='toggle-heart'] {
+/* The initial state of the icon (the plus icon in this case) */
+[for="icon"] {
   align-self: center;
   position: relative;
   color: #B3B3B3;
   font-size: 2em;
   user-select: none;
   cursor: pointer;
+  
+  /* Make the gray circle border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #B3B3B3;
+  border-radius: 50%;
 }
-[for='toggle-heart']:before, [for='toggle-heart']:after {
+
+/* adds scale for hover on and off */
+
+label[for="icon"]:hover,
+#icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.4);
+}
+
+/* Shared properties of the bubble and particles */
+[for="icon"]:before, [for="icon"]:after {
   position: absolute;
   z-index: -1;
+  /* top and left are CSS tricks to center pseudo-elements */
   top: 50%;
   left: 50%;
   border-radius: 50%;
   content: '';
 }
-[for='toggle-heart']:before {
+
+/* This builds the bubble */
+[for="icon"]:before {
   box-sizing: border-box;
+  /* Some CSS trickery to center the bubble */
   margin: -2.25rem;
   border: solid 2.25rem #1db954;
   width: 4.5rem;
   height: 4.5rem;
+  /* Hide the bubble */
   transform: scale(0);
 }
-[for='toggle-heart']:after {
+
+/* This builds the particles */
+[for="icon"]:after {
   margin: -0.1875rem;
   width: 0.375rem;
   height: 0.375rem;
+  /* Read MDN for box-shadow but essentially each part has 5 values separated by commas for each particle. The first two values are location (X, Y). The third is blur (0 means no blur), and the fourth one is spread (how big it gets). The fifth is color. */
   box-shadow: 0.32476rem -3rem 0 -0.20625rem #1db954, -0.32476rem -2.625rem 0 -0.20625rem #1db954, 2.54798rem -1.61656rem 0 -0.20625rem #1db954, 1.84982rem -1.89057rem 0 -0.20625rem #1db954, 2.85252rem 0.98418rem 0 -0.20625rem #1db954, 2.63145rem 0.2675rem 0 -0.20625rem #1db954, 1.00905rem 2.84381rem 0 -0.20625rem #1db954, 1.43154rem 2.22414rem 0 -0.20625rem #1db954, -1.59425rem 2.562rem 0 -0.20625rem #1db954, -0.84635rem 2.50595rem 0 -0.20625rem #1db954, -2.99705rem 0.35095rem 0 -0.20625rem #1db954, -2.48692rem 0.90073rem 0 -0.20625rem #1db954, -2.14301rem -2.12438rem 0 -0.20625rem #1db954, -2.25479rem -1.38275rem 0 -0.20625rem #1db954;
 }
 
-@keyframes heart {
-  0%, 17.5% {
-    font-size: 0;
-  }
-}
 @keyframes bubble {
   15% {
     transform: scale(1);
@@ -110,12 +124,16 @@ body {
     border-width: 0;
   }
 }
+
 @keyframes particles {
   0%, 20% {
     opacity: 0;
   }
   25% {
     opacity: 1;
+    /* As the animation goes on, the particles spread out (fourth value is 0 and previously, they were negative. So the number is getting bigger. 
+    
+    The first and second also increase their size x, y positions a bit too for more effect before shrinking via ease-out and going back to their previous states) */
     box-shadow: 0.32476rem -2.4375rem 0 0rem #1db954, -0.32476rem -2.0625rem 0 0rem #1db954, 2.1082rem -1.26585rem 0 0rem #1db954, 1.41004rem -1.53985rem 0 0rem #1db954, 2.30412rem 0.85901rem 0 0rem #1db954, 2.08305rem 0.14233rem 0 0rem #1db954, 0.76499rem 2.33702rem 0 0rem #1db954, 1.18748rem 1.71734rem 0 0rem #1db954, -1.35019rem 2.0552rem 0 0rem #80c8ff, -0.60229rem 1.99916rem 0 0rem #1db954, -2.44865rem 0.22578rem 0 0rem #1db954, -1.93852rem 0.77557rem 0 0rem #1db954, -1.70323rem -1.77366rem 0 0rem #1db954, -1.81501rem -1.03204rem 0 0rem #1db954;
   }
 }
@@ -132,3 +150,89 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
+
+.save {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-self: center;
+}
+
+h1 {
+	font-size: 3.5vh;
+	color: #1db954;
+	text-align: center;
+	background-color: #121212;
+	padding: 45px;
+	margin: -30px;
+}
+
+h2 {
+	font-size: 3vh;
+  font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+	color: #121212;
+	line-height: 1;
+	background-color: #1db954;
+	padding: 25px;
+	margin: -15px -30px;
+	text-align: center;
+}
+
+li {
+  color: white;
+  font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+	line-height: 1.7;
+	font-size: 2vh;
+	max-width: 35ch;
+	align-items: right;
+}
+
+p {
+  color: white;
+  font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+	font-size: 2vh;
+	text-decoration: underline;
+	margin: 3em 2em 0.5em 0;
+} 
+
+.section {
+	margin: 0 0 2.5em 0;
+}
+
+#spotify {
+	margin: 3.7em 0;
+	text-align: center;
+}
+
+#interaction {
+	text-align: center;
+	text-decoration: none;
+	font-size: 3vh;
+	margin-top: 3em;
+}
+
+.container {
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 4em;
+	column-gap: 60px;
+}
+
+.box {
+	flex: 1;
+	background-color:	#121212;
+	border: 2px solid #1db954;
+	border-radius: 4px;
+	padding: 15px 30px 30px 30px;
+	margin: -0.75em;
+}
+
+/* media queries */
+@media screen
+and (max-width: 1000px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 80px;
+	}
+}
+
