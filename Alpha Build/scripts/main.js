@@ -4,7 +4,7 @@ const label = icon.nextElementSibling;
 
 icon.addEventListener("change", function () {
   if (icon.checked) {
-    label.textContent = "&#x2713";
+    label.textContent = "✓";
   } else {
     label.textContent = "+";
   }

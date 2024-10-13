@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+	font-family: 'fashion';
+	src: url(../fonts/fashion_fetish/Fashion\ Fetish\ Regular.ttf) format('truetype');
+	font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -13,12 +21,8 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
   height: 100vh;
-  font: sans-serif;
-  /* Hide the scroll bar */
-  overflow: hidden; 
+  font-family: 'fashion', Arial, Helvetica, sans-serif;
   background-color: #212121;
 }
 
@@ -31,6 +35,7 @@ body {
 /* If the checkbox is checked, get the icon label, make it green AND the border green, and start the animation. This animation timing is inherited by the pseudo-elements (the bubble and the particle). See the animation: inherit below */
 [id="icon"]:checked + label {
   color: 	#212121;
+  font-family: 'fashion', 'Courier New', Courier, monospace;
   background-color: #1db954;
   border-color: #212121;
   animation: 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
@@ -153,17 +158,18 @@ label[for="icon"]:hover,
 
 .save {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  align-self: center;
+	grid-column: span 4;
+  justify-content: center;
+	margin: 6em;
 }
 
 h1 {
-	font-size: 3.5vh;
+	font-size: 3.4vh;
 	color: #1db954;
 	text-align: center;
 	background-color: #121212;
-	padding: 45px;
-	margin: -30px;
+	padding: 65px;
+	margin: -10px;
 }
 
 h2 {
@@ -211,13 +217,16 @@ p {
 }
 
 .container {
-	display: flex;
-	flex-wrap: nowrap;
-	margin: 4em;
+	display: grid;
+	grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, 1fr);
+	margin: -2em 8em;
 	column-gap: 60px;
 }
 
 .box {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
 	background-color:	#121212;
 	border: 2px solid #1db954;
