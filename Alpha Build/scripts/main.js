@@ -1,8 +1,6 @@
 const icon = document.getElementById("icon");
 const label = icon.nextElementSibling;
 
-const popover = document.getElementById("my-popover");
-
 const sign = document.querySelector(".sign");
 const toolTipText = document.querySelector(".tooltiptext");
 
@@ -15,6 +13,8 @@ icon.addEventListener("change", function () {
     toolTipText.textContent = "Add to Your Library";
   }
 });
+
+const popover = document.getElementById("my-popover");
 
 icon.addEventListener("change", function () {
   if (icon.checked) {
