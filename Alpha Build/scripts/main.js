@@ -1,14 +1,6 @@
 const icon = document.getElementById("icon");
 const label = icon.nextElementSibling;
 
-icon.addEventListener("change", function () {
-  if (icon.checked) {
-    label.textContent = "\u2713";
-  } else {
-    label.textContent = "+";
-  }
-});
-
 const popover = document.getElementById("my-popover");
 
 icon.addEventListener("change", function () {
@@ -28,5 +20,18 @@ icon.addEventListener("change", function () {
     setTimeout(() => {
       popover.hidePopover();
     }, 3000);
+  }
+});
+
+const sign = document.querySelector(".sign");
+const toolTipText = document.querySelector(".tooltiptext");
+
+icon.addEventListener("change", function () {
+  if (icon.checked) {
+    sign.innerHTML = "✓";
+    toolTipText.textContent = "Hello Vy";
+  } else {
+    sign.innerHTML = "+";
+    toolTipText.textContent = "Test";
   }
 });
