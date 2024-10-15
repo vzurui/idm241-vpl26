@@ -246,6 +246,40 @@ p {
 	margin: -0.75em;
 }
 
+.tooltip {
+  position: relative; /* Important: This allows positioning the tooltiptext relative to the label */
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  /* Position it above the label */
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  transition: opacity 0.3s ease;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sign {
+  position: absolute;
+  left: 16px;
+  top: 4px;
+}
+
 /* media queries */
 @media screen
 and (max-width: 1000px) {
