@@ -7,15 +7,16 @@
 }
 
 body {
-	background-color: cornsilk;
+	background-color:	#212121;
 	margin: 2em;
 }
 
 h1 {
   font-family: 'comfortaa', Arial, Helvetica, sans-serif;
 	text-align: center;
+	font-size: 5vh;
 	color: #1db954;
-	margin: 1em 0 1em 0;
+	margin: 0.5em 0 1em 0;
 }
 
 h2 {
@@ -72,7 +73,7 @@ p {
 
 #my-popover{
   justify-content: center;
-  margin-top: 10em; 
+  margin-top: 11.5em; 
   padding: 20px;
   border-radius: 8px;
   font-family: sans-serif;
@@ -221,9 +222,12 @@ p {
   opacity: 1;
 }
 
-.sign {
-  position: absolute;
-  left: 16px;
-  top: 4px;
+/* media queries */
+@media screen
+and (max-width: 1000px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 80px;
+	}
 }
-
