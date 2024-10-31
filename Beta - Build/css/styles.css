@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'comfortaa';
+	src: url(../fonts/comfortaa/Comfortaa-Light.ttf) format('truetype');
+	font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
 	justify-content: center;
 	align-items: center;
@@ -8,6 +16,8 @@ body {
 
 h1 {
 	text-align: center;
+	font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+	color: #1db954;
 }
 
 /* spotify options button */
@@ -17,12 +27,8 @@ h1 {
 } /* hover trransition timing */
 
 .buttons {
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
 } /* button spacing */
 
 .butFrame {
@@ -31,8 +37,7 @@ h1 {
   position: relative;
   display: block;
   cursor: pointer;
-  color: #fff;
-  background: #fff;
+  background: #b3b3b3;
   font-size: 1em;
   font-family: inherit;
   cursor: pointer;
@@ -43,15 +48,8 @@ h1 {
   -webkit-flex: 1 250px;
   -ms-flex: 1 250px;
   flex: 1 250px;
-  border: 6px solid white;
+	border-radius: 50%;
 } /* button styling, THIS HIDES THE BUTTON TEXT. CHANGE THIS TO SPOTIFY COLORS AND CIRCLES */
-
-.buttons .butFrame img {
-  width: 100%;
-  max-width: 120px;
-  height: auto;
-  vertical-align: bottom;
-} /* this repositions the images within the buttons */
 
 .buttons .butFrame .butText {
   padding: 10px 0;
@@ -123,4 +121,36 @@ animation: bounce 1.5s ease-in-out infinite;
     }
     50% {      transform:translateY(-25px);/* Adjust height of the bounce */
     }
+}
+
+/* options tool tip text */
+
+.tooltiptext {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+	font-size: 15px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+	white-space: nowrap;
+
+	bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+	transition-delay: 1s;
+
+}
+
+.tooltip {
+	display: flex;
+	flex-direction: row;
+  position: relative; 
+  cursor: pointer;
 }
