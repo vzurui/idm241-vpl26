@@ -301,3 +301,15 @@ animation: bounce 1.5s ease-in-out infinite;
     font-size: 0;
   } 
 }
+
+/* heart tool tip button */
+
+/* heart button popover */
+
+#my-popover{
+  justify-content: center;
+  margin-top: 7em; 
+  padding: 20px;
+  border-radius: 8px;
+  font-family: sans-serif;
+}

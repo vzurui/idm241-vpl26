@@ -1,16 +1,16 @@
-const icon = document.getElementById("icon");
-const sign = document.querySelector(".sign");
+// TOOL TIP TEXT FOR HEART/SAVE BUTTON
+const icon = document.getElementById("toggle-heart");
 const toolTipText = document.querySelector(".tooltiptext");
 
 icon.addEventListener("change", function () {
   if (icon.checked) {
-    sign.innerHTML = "✓";
     toolTipText.textContent = "Remove from Your Library";
   } else {
-    sign.innerHTML = "+";
-    toolTipText.textContent = "Add to Your Library";
+    toolTipText.textContent = "Save to Your Library";
   }
 });
+
+const sign = document.querySelector(".sign");
 
 const popover = document.getElementById("my-popover");
 
