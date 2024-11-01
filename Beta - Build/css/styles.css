@@ -12,9 +12,11 @@ body {
 	height: 100vh;
 	margin: 0;
 	background-color: lavender;
-	display: flex;
+	  display: flex;
+  justify-content: center;
   margin: 0;
   height: 100vh;
+  background: linear-gradient(135deg, #121721, #000);
   font: 1em verdana, sans-serif;
 }
 
@@ -230,7 +232,7 @@ animation: bounce 1.5s ease-in-out infinite;
 @keyframes bubble {
   15% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: 1;
     border-color: 	#1db954;
     border-width: 2.25rem;
   }
@@ -263,7 +265,7 @@ animation: bounce 1.5s ease-in-out infinite;
   width: 1.6em;
   height: 2.5em;
   border-radius: 50%;
-  animation: pulse 0.7s ease-out 2; /* Pulses twice, then stops */
+  animation: pulse 0.5s ease-out 2; /* Pulses twice, then stops */
 }
 
 /* Pulse animation */
@@ -289,7 +291,7 @@ animation: bounce 1.5s ease-in-out infinite;
   animation: heart-shrink 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
 }
 
-[id='toggle-heart']:not(:checked) + label:before, [id='toggle-heart']:not(:checked) + label:after {
+[id='toggle-heart']:not(:checked) + label:after {
   animation: inherit;
   animation-timing-function: ease-out;
 }
@@ -297,5 +299,5 @@ animation: bounce 1.5s ease-in-out infinite;
 @keyframes heart-shrink {
   0%, 17.5% {
     font-size: 0;
-  } /* BOUNCE animation */
+  } 
 }
