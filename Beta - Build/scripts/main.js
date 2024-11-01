@@ -10,13 +10,12 @@ icon.addEventListener("change", function () {
   }
 });
 
-const sign = document.querySelector(".sign");
+//MODE FOR HEART/SAVE BUTTON
 
 const popover = document.getElementById("my-popover");
 
 icon.addEventListener("change", function () {
   if (icon.checked) {
-    sign.textContent = "\u2713";
     popover.textContent = "Added to Your Library";
     popover.showPopover();
 
@@ -24,7 +23,6 @@ icon.addEventListener("change", function () {
       popover.hidePopover();
     }, 3000);
   } else {
-    sign.textContent = "+";
     popover.textContent = "Removed from Your Library";
     popover.showPopover();
 
