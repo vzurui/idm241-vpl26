@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'comfortaa';
-	src: url(../fonts/comfortaa/Comfortaa-Light.ttf) format('truetype');
+	src: url(../Alpha/fonts/comfortaa/Comfortaa-Light.ttf) format('truetype');
 	font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -24,6 +24,30 @@ h1 {
 	text-align: center;
 	font-family: 'comfortaa', Arial, Helvetica, sans-serif;
 	color: #1db954;
+}
+
+/* ALBUM MODAL */
+
+.album-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 3px solid #212121;
+  background-color: #212121;
+  padding: 35px 20px 20px 30px;
+}
+
+.album-modal img {
+  display: flex;
+  align-items: left;
+}
+
+/* button container */
+
+.play-buttons {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  background-color: #212121;
 }
 
 /* OPTIONS BUTTON MICROINTERACTION */
@@ -312,4 +336,53 @@ animation: bounce 1.5s ease-in-out infinite;
   padding: 20px;
   border-radius: 8px;
   font-family: sans-serif;
+}
+
+
+/* shuffle button styling */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 20px;
+}
+
+.item {
+  padding: 20px;
+  margin: 10px;
+  background-color: lightblue;
+  text-align: center;
+  cursor: pointer; /* Change cursor to pointer */
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Smoother transition */
+}
+
+.item:active {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on click */
+  transform: scale(0.95); /* Slight scale down on click */
+}
+
+/* play button styling */
+
+.btn {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  outline: none;
+  background: #1db954;
+  border: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn .play {
+  width: 65px;
+  height: 65px;
+  background: #212121;
+  margin-left: 15px;
+  z-index: 100;
+  clip-path: polygon(0 0, 80% 48%, 0 100%, 0% 100%);
 }
