@@ -21,9 +21,20 @@ body {
 }
 
 h1 {
-	text-align: center;
+	text-align: left;
 	font-family: 'comfortaa', Arial, Helvetica, sans-serif;
-	color: #1db954;
+	color: #fff;
+  font-weight: 900;
+}
+
+p {
+  color: #b3b3b3;
+  opacity: 0.6;
+}
+
+h4 {
+  color: #fff;
+  opacity: 0.9;
 }
 
 /* ALBUM MODAL */
@@ -31,14 +42,27 @@ h1 {
 .album-modal {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border: 3px solid #212121;
-  background-color: #212121;
-  padding: 35px 20px 20px 30px;
+  background-color: #262626;
+  padding: 20px 20px 20px 30px;
+  align-items: center;
 }
 
 .album-modal img {
+  justify-content: center;
+}
+
+.album-info {
+  padding: 120px 20px 20px 20px;
+}
+
+.inline-content {
   display: flex;
-  align-items: left;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.inline-content h1,
+.inline-content p {
+  margin: 0 10px; /* Removes default margin for both header and paragraph */
 }
 
 /* button container */
@@ -59,6 +83,8 @@ h1 {
 .buttons {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
+height: 10px;
+width: 20px;
 } /* button spacing */
 
 .butFrame {
@@ -364,9 +390,14 @@ animation: bounce 1.5s ease-in-out infinite;
 
 /* play button styling */
 
+.play-button {
+  width: 30px;
+  height: 30px;
+}
+
 .btn {
-  width: 180px;
-  height: 180px;
+  width: 220%;
+  height: 220%;
   border-radius: 50%;
   outline: none;
   background: #1db954;
@@ -379,8 +410,8 @@ animation: bounce 1.5s ease-in-out infinite;
 }
 
 .btn .play {
-  width: 65px;
-  height: 65px;
+  width: 50%;
+  height: 50%;
   background: #212121;
   margin-left: 15px;
   z-index: 100;
