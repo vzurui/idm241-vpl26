@@ -72,6 +72,7 @@ h4 {
   flex: 1;
   justify-content: space-evenly;
   background-color: #212121;
+  padding: 20px;
 }
 
 /* OPTIONS BUTTON MICROINTERACTION */
@@ -83,8 +84,8 @@ h4 {
 .buttons {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
-height: 10px;
-width: 20px;
+height: 5px;
+width: 15px;
 } /* button spacing */
 
 .butFrame {
@@ -410,10 +411,10 @@ animation: bounce 1.5s ease-in-out infinite;
 }
 
 .btn .play {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   background: #212121;
-  margin-left: 15px;
+  margin-left: 10px;
   z-index: 100;
   clip-path: polygon(0 0, 80% 48%, 0 100%, 0% 100%);
 }
