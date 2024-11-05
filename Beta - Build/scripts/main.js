@@ -78,3 +78,29 @@ function togglePositionAndColor() {
   // Flip the toggle state
   isToggled = !isToggled;
 }
+
+// TOOL TIP TEXT FOR OPTIONS
+
+const buttonsContainer = document.querySelector(".buttons");
+const menu = document.querySelector(".menu");
+const tooltipText = document.querySelector(".tooltiptext-two"); // Select the tooltip text
+
+buttonsContainer.addEventListener("click", function (event) {
+  // Prevent the event from bubbling up and triggering the document click event
+  event.stopPropagation();
+
+  // Toggle the menu display
+  const isMenuVisible = menu.style.display === "block";
+  menu.style.display = isMenuVisible ? "none" : "block";
+
+  // Toggle the tooltip text based on menu visibility
+  tooltipText.textContent = isMenuVisible ? "More Options" : "Less Options";
+});
+
+// Close the menu if clicking outside
+document.addEventListener("click", function (event) {
+  if (!buttonsContainer.contains(event.target)) {
+    menu.style.display = "none"; // Hide the menu if clicked outside
+    tooltipText.textContent = "More Options"; // Reset tooltip text
+  }
+});
