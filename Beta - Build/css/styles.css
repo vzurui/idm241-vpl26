@@ -636,7 +636,7 @@ and (max-width: 1200px) {
 
   #my-popover{
     position: absolute;
-    top: 125%; /* Aligns it below the container */
+    top: 105%; /* Aligns it below the container */
     left: 35%; /* Centers it horizontally */
     transform: translateX(-80%); 
     justify-content: center;
