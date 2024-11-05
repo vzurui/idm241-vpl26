@@ -636,7 +636,7 @@ and (max-width: 1200px) {
 
   #my-popover{
     position: absolute;
-    top: 105%; /* Aligns it below the container */
+    top: 109%; /* Aligns it below the container */
     left: 35%; /* Centers it horizontally */
     transform: translateX(-80%); 
     justify-content: center;
@@ -681,16 +681,14 @@ and (max-width: 1200px) {
   a:link {
     font-family: 'comfortaa', Arial, Helvetica, sans-serif;
     color: #1db954;
-    margin-top: -5em;
-    font-size: 2vw;
+    font-size: 120%;
     text-align: center;
   }
   
   a:visited {
     font-family: 'comfortaa', Arial, Helvetica, sans-serif;
     color: #1db954;
-    margin-top: -5em;
-    font-size: 2vw;
+    font-size: 120%;
     text-align: center;
 
   }
@@ -698,9 +696,60 @@ and (max-width: 1200px) {
   a:hover {
     font-family: 'comfortaa', Arial, Helvetica, sans-serif;
     color: white;
-    margin-top: -5em;
-    font-size: 2vw;
+    font-size: 120%;
     text-align: center;
 
   }
+}
+
+@media screen
+and (max-width: 700px) {
+.spotify-modal {
+  display: grid;
+  grid-template-rows: 80% 20%;
+  margin: 1em 2em;
+}
+
+.album-modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #262626;
+  padding: 25px 60px;
+  justify-items: left;
+}
+
+.album-info {
+  padding: 20px 0 20px 2px;
+  font-size: 90%;
+}
+
+#my-popover{
+  position: absolute;
+  top: 112%; /* Aligns it below the container */
+  left: 50%; /* Centers it horizontally */
+  transform: translateX(-80%); 
+  justify-content: center;
+  align-items: center;
+  margin-top: 8em; 
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: sans-serif;
+}
+.container {
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 40px;
+}
+
+.buttons {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 5px;
+  width: 15px;
+  margin-top: 20px;
+  margin-right: 5em;
+  } 
 }
