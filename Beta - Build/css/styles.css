@@ -585,7 +585,7 @@ and (max-width: 1200px) {
 		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: 60px;
-    margin: 1em 3em;
+    margin: 5em 3em 2em 3em;
 	}
 
   .spotify-modal {
@@ -598,10 +598,8 @@ and (max-width: 1200px) {
     display: grid;
     grid-template-columns: 1fr;
     background-color: #262626;
-    padding: 25px 50px 25px 50px;
+    padding: 25px 130px;
     justify-items: left;
-    margin: 0 5em;
-
   }
 
   .album-modal img {
@@ -617,12 +615,58 @@ and (max-width: 1200px) {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex: 1;
   }
+
+  .buttons {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 5px;
+    width: 15px;
+    margin-top: 20px;
+    margin-right: 3em;
+    } 
 
   .container {
     align-items: center;
     justify-content: flex-end;
+    margin-top: 2em;
+  }
 
+  #my-popover{
+    position: absolute;
+    top: 125%; /* Aligns it below the container */
+    left: 35%; /* Centers it horizontally */
+    transform: translateX(-80%); 
+    justify-content: center;
+    align-items: center;
+    margin-top: 8em; 
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: sans-serif;
+  }
+
+  .tooltiptext-three {
+    position: absolute;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    bottom: 170%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip:hover .tooltiptext-three {
+    visibility: visible;
+    transition-delay: 1s;
   }
 
   header {
