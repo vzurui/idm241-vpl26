@@ -277,8 +277,8 @@ animation: bounce 1.5s ease-in-out infinite;
 .menu {
   display: none; /* Hide the menu by default */
   position: absolute; /* Position it relative to the button */
-  top: 170%; /* Place it directly below the button */
-  left: 0; /* Align it to the left */
+  top: 10%; /* Place it directly below the button */
+  left: 40%; /* Align it to the left */
   background-color: #535353; /* Background color for the menu */
   border: 1px solid #ccc; /* Optional border */
   z-index: 10; /* Ensure it appears above other elements */
@@ -483,7 +483,7 @@ animation: bounce 1.5s ease-in-out infinite;
   width: 1.6em;
   height: 2.5em;
   border-radius: 50%;
-  animation: pulse 0.5s ease-out 2; /* Pulses twice, then stops */
+  animation: pulse 0.5s ease-out 2;
 }
 
 /* Pulse animation */
