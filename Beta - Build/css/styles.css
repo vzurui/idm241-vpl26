@@ -55,6 +55,7 @@ h3 {
 p {
   color: #b3b3b3;
   opacity: 0.6;
+  font-family: 'comfortaa', Arial, Helvetica, sans-serif;
 }
 
 h4 {
@@ -65,6 +66,7 @@ h4 {
 
 li {
   color: white;
+  font-family: 'comfortaa', Arial, Helvetica, sans-serif;
 	line-height: 1.7;
 	font-size: 2vh;
 	max-width: 35ch;
@@ -122,6 +124,7 @@ a:hover {
   border: 8px solid black;
   border-radius: 15px;
   z-index: 2;
+  margin: 2em;
 }
 
 .album-modal {
@@ -284,13 +287,31 @@ animation: bounce 1.5s ease-in-out infinite;
 	bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
 	transition-delay: 1s;
+}
 
+.tooltiptext-alt {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+	font-size: 13px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+	white-space: nowrap;
+	bottom: 200%;
+  left: 50%;
+  transform: translateX(-15%);
+}
+
+.tooltip:hover .tooltiptext-alt {
+  visibility: visible;
+	transition-delay: 1s;
 }
 
 .tooltip {
@@ -457,8 +478,8 @@ animation: bounce 1.5s ease-in-out infinite;
 
 #my-popover{
   position: absolute;
-  top: 58%; /* Aligns it below the container */
-  left: 25%; /* Centers it horizontally */
+  top: 85%; /* Aligns it below the container */
+  left: 28%; /* Centers it horizontally */
   transform: translateX(-80%); 
   justify-content: center;
   align-items: center;
