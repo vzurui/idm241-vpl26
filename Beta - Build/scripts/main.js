@@ -34,77 +34,29 @@ icon.addEventListener("change", function () {
 
 // MODE FOR SHUFFLE BUTTON *****
 
-// Select the items
-const item1 = document.getElementById("item1");
-const item2 = document.getElementById("item2");
+let isToggled = false;
 
-// Function to apply transformations
-function applyTransformations(
-  clickedItem,
-  otherItem,
-  clickedTransform,
-  otherTransform
-) {
-  clickedItem.style.transform = clickedTransform;
-  otherItem.style.transform = otherTransform;
-}
+function togglePositionAndColor() {
+  // Define toggle colors
+  const toggleColor = "#1db954"; // New color on click
+  const defaultColor = "#B3B3B3"; // Default color
 
-// Function to reset transformations
-function resetTransformations(item) {
-  item.style.transform = "none";
-}
+  // Determine new colors based on the toggle state
+  const newIcon1Color = isToggled ? defaultColor : toggleColor;
+  const newIcon2Color = isToggled ? defaultColor : toggleColor;
 
-// Function to toggle background color
-function toggleBackgroundColor(item) {
-  item.style.backgroundColor =
-    item.style.backgroundColor === "lightblue" ? "lightgreen" : "lightblue";
-}
+  // Update the CSS variables for each icon's color
+  document.documentElement.style.setProperty("--icon1-color", newIcon1Color);
+  document.documentElement.style.setProperty("--icon2-color", newIcon2Color);
 
-// Function to swap items
-function swapItems(event) {
-  const clickedItem = event.currentTarget; // The item that was clicked
-  const otherItem = clickedItem === item1 ? item2 : item1; // Determine the other item
+  // Toggle positions and flipping of icons using transform
+  document.querySelector(".icon1").style.transform = isToggled
+    ? "translateY(160px) scaleY(1)"
+    : "translateY(160px) scaleY(-1)";
+  document.querySelector(".icon2").style.transform = isToggled
+    ? "translateY(40px) scaleY(1)"
+    : "translateY(100px) scaleY(-1)";
 
-  // Apply initial transformations for visual effect
-  applyTransformations(
-    clickedItem,
-    otherItem,
-    "translateY(20px)",
-    "translateY(-20px)"
-  );
-
-  // Wait for the transition to complete, then swap items
-  setTimeout(() => {
-    // Swap positions
-    const clickedItemNextSibling = clickedItem.nextElementSibling;
-
-    if (clickedItemNextSibling === otherItem) {
-      // If clicked item is directly before the other item
-      clickedItem.parentNode.insertBefore(otherItem, clickedItem); // Move other item before clicked item
-    } else {
-      // If clicked item is directly after the other item
-      clickedItem.parentNode.insertBefore(clickedItem, otherItem); // Move clicked item before other item
-    }
-
-    // Reset transforms and change colors
-    resetTransformations(clickedItem);
-    resetTransformations(otherItem);
-    toggleBackgroundColor(clickedItem);
-    toggleBackgroundColor(otherItem);
-  }, 300); // Timeout matches the transition duration
-}
-
-// Add click event listeners
-item1.addEventListener("click", swapItems);
-item2.addEventListener("click", swapItems);
-
-// Function to apply transformations
-function applyTransformations(
-  clickedItem,
-  otherItem,
-  clickedTransform,
-  otherTransform
-) {
-  clickedItem.style.transform = `${clickedTransform} scale(0.95)`; // Scale down slightly
-  otherItem.style.transform = `${otherTransform} scale(0.95)`; // Scale down slightly
+  // Flip the toggle state
+  isToggled = !isToggled;
 }

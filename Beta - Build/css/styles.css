@@ -79,7 +79,7 @@ h4 {
 
 .buttons * {
   transition: all .5s ease;
-} /* hover trransition timing */
+} /* hover transition timing */
 
 .buttons {
 display: grid;
@@ -368,27 +368,33 @@ animation: bounce 1.5s ease-in-out infinite;
 
 /* shuffle button styling */
 
+:root {
+  --icon1-color: #B3B3B3; /* Default color for icon 1 */
+  --icon2-color: #B3B3B3; /* Default color for icon 2 */
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  margin: 20px;
-}
-
-.item {
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
   padding: 20px;
-  margin: 10px;
-  background-color: lightblue;
-  text-align: center;
-  cursor: pointer; /* Change cursor to pointer */
-  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Smoother transition */
 }
 
-.item:active {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on click */
-  transform: scale(0.95); /* Slight scale down on click */
+.icon {
+  transition: transform 0.3s ease, fill 0.3s ease; /* Smooth transition for both position and color */
 }
 
+.icon1 {
+  color: var(--icon1-color); /* Use CSS variable for color */
+  transform: translateY(160px); /* Default Y position */
+}
+
+.icon2 {
+  color: var(--icon2-color); /* Use CSS variable for color */
+  transform: translateY(40px); /* Offset Y position initially */
+}
 /* play button styling */
 
 .play-button {
