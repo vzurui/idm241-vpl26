@@ -294,7 +294,7 @@ animation: bounce 1.5s ease-in-out infinite;
 	transition-delay: 1s;
 }
 
-.tooltiptext-alt {
+.tooltiptext-two {
   position: absolute;
   visibility: hidden;
   background-color: black;
@@ -309,7 +309,27 @@ animation: bounce 1.5s ease-in-out infinite;
   transform: translateX(-15%);
 }
 
-.tooltip:hover .tooltiptext-alt {
+.tooltip:hover .tooltiptext-two {
+  visibility: visible;
+	transition-delay: 1s;
+}
+
+.tooltiptext-three {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+	font-size: 13px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+	white-space: nowrap;
+	bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover .tooltiptext-three {
   visibility: visible;
 	transition-delay: 1s;
 }

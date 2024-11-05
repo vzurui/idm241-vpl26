@@ -10,7 +10,7 @@ icon.addEventListener("change", function () {
   }
 });
 
-//MODE FOR HEART/SAVE BUTTON
+//MODE FOR HEART + SAVE BUTTON
 
 const popover = document.getElementById("my-popover");
 
@@ -30,6 +30,23 @@ icon.addEventListener("change", function () {
       popover.hidePopover();
     }, 3000);
   }
+});
+
+// TOOL TIP TEXT FOR SHUFFLE
+
+const shuffle = document.querySelector(".container");
+const toolTipTextThree = document.querySelector(".tooltiptext-three");
+
+let isShuffleEnabled = false; // State to track shuffle status
+
+// Add click event listener to the container
+shuffle.addEventListener("click", function () {
+  isShuffleEnabled = !isShuffleEnabled; // Toggle shuffle state
+
+  // Update tooltip text based on the state
+  toolTipTextThree.textContent = isShuffleEnabled
+    ? "Disable Shuffle"
+    : "Enable Shuffle";
 });
 
 // MODE FOR SHUFFLE BUTTON *****
