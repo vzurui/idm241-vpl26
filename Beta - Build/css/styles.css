@@ -81,7 +81,7 @@ h4 {
 /* OPTIONS BUTTON MICROINTERACTION */
 
 .buttons * {
-  transition: all .5s ease;
+  transition: all .2s ease;
 } /* hover transition timing */
 
 .buttons {
@@ -89,6 +89,7 @@ display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 height: 5px;
 width: 15px;
+margin-top: 20px;
 } /* button spacing */
 
 .butFrame {
@@ -119,7 +120,7 @@ width: 15px;
 
 .buttons:hover .butFrame {
   animation: bounce 0.6s ease;
-  -webkit-animation: bounce 2s ease infinite;
+  -webkit-animation: bounce 1s ease infinite;
 } /* THIS ADDS THE BOUNCE to the entire divider, adjust how much it bounces here */
 
 @keyframes bounce {
@@ -190,12 +191,11 @@ animation: bounce 1.5s ease-in-out infinite;
   visibility: hidden;
   background-color: black;
   color: #fff;
-	font-size: 15px;
+	font-size: 10px;
   text-align: center;
   padding: 5px 10px;
   border-radius: 4px;
 	white-space: nowrap;
-
 	bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
@@ -217,6 +217,12 @@ animation: bounce 1.5s ease-in-out infinite;
 
 /* HEART BUTTON MICROINTERACTION */
 
+.like-button {
+  justify-content: first baseline;
+  margin-top: 5px;
+  zoom: 130%;
+
+}
 
 [id='toggle-heart'] {
   position: absolute;
