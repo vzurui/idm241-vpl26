@@ -7,17 +7,20 @@
 }
 
 body {
-	justify-content: center;
 	align-items: center;
-	height: 100vh;
 	margin: 0;
-	background-color: lavender;
-	  display: flex;
+	display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 0;
-  height: 100vh;
+  /* height: 100vh; */
   background: linear-gradient(135deg, #121721, #000);
   font: 1em verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -25,6 +28,22 @@ h1 {
 	font-family: 'comfortaa', Arial, Helvetica, sans-serif;
 	color: #fff;
   font-weight: 900;
+}
+
+h2 {
+	font-size: 3vh;
+	color: white;
+	line-height: 1;
+	background-color: #1db954;
+	padding: 25px;
+	margin: -15px -30px;
+	text-align: center;
+}
+
+h3 {
+  color: white;
+	margin: 2em 0 -0.5em 0;
+	text-decoration: underline;
 }
 
 p {
@@ -37,13 +56,66 @@ h4 {
   opacity: 0.9;
 }
 
+li {
+  color: white;
+	line-height: 1.7;
+	font-size: 2vh;
+	max-width: 35ch;
+	align-items: right;
+}
+
+a:link {
+	color: #1db954;
+}
+
+a:visited {
+	color: #1db954;
+}
+
+a:hover {
+	color: white;
+}
+
+.section {
+	margin: 0 0 2.5em 0;
+}
+
+#spotify {
+	margin: 3.7em 0;
+	text-align: center;
+}
+
+/* description stylings */
+
+.description {
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 4em;
+	column-gap: 60px;
+}
+
+.box {
+	flex: 1;
+	background-color:	#121212;
+	border: 2px solid #1db954;
+	border-radius: 4px;
+	padding: 15px 30px 30px 30px;
+	margin: -0.75em;
+}
+
 /* ALBUM MODAL */
+
+.spotify-modal {
+  border: 8px solid black;
+  border-radius: 15px;
+  z-index: 2;
+}
 
 .album-modal {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #262626;
-  padding: 20px 20px 20px 30px;
+  padding: 25px 20px 25px 35px;
   align-items: center;
 }
 
@@ -52,7 +124,7 @@ h4 {
 }
 
 .album-info {
-  padding: 120px 20px 20px 20px;
+  padding: 120px 20px 20px 30px;
 }
 
 .inline-content {
@@ -70,11 +142,10 @@ h4 {
 .play-buttons {
   display: flex;
   flex-direction: row;
-  flex: 1;
   justify-content: space-evenly;
   align-items: top;
-  /* background-color: #212121; */
-  padding: 30px 20px 20px 20px;
+  background-color: #212121;
+  padding-top: 30px;
   column-gap: 30px;
 }
 
@@ -85,6 +156,7 @@ h4 {
 } /* hover transition timing */
 
 .buttons {
+position: relative;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 height: 5px;
@@ -93,7 +165,7 @@ margin-top: 20px;
 } /* button spacing */
 
 .butFrame {
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: center;
   position: relative;
   display: block;
@@ -120,7 +192,7 @@ margin-top: 20px;
 
 .buttons:hover .butFrame {
   animation: bounce 0.6s ease;
-  -webkit-animation: bounce 1s ease infinite;
+  -webkit-animation: bounce s ease infinite;
 } /* THIS ADDS THE BOUNCE to the entire divider, adjust how much it bounces here */
 
 @keyframes bounce {
@@ -196,7 +268,7 @@ animation: bounce 1.5s ease-in-out infinite;
   padding: 5px 10px;
   border-radius: 4px;
 	white-space: nowrap;
-	bottom: 120%;
+	bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -218,10 +290,12 @@ animation: bounce 1.5s ease-in-out infinite;
 /* HEART BUTTON MICROINTERACTION */
 
 .like-button {
+  position: relative;
+  display: inline-block;
   justify-content: first baseline;
   margin-top: 5px;
   zoom: 130%;
-
+  z-index: 1;
 }
 
 [id='toggle-heart'] {
@@ -257,6 +331,7 @@ animation: bounce 1.5s ease-in-out infinite;
   font-size: 2em;
   user-select: none;
   cursor: pointer;
+  z-index: 1;
 } /* aligns the position of the heart to the be the center, ALSO THE COLOR AND PROPERTIES **BEFORE IT IS CHECKED**!!! */
 
 [for='toggle-heart']:before, [for='toggle-heart']:after {
@@ -275,6 +350,7 @@ animation: bounce 1.5s ease-in-out infinite;
   width: 4.5rem;
   height: 4.5rem;
   transform: scale(0);
+  z-index: 1;
 } /* the pulse around the circle before you press it */
 
 [for='toggle-heart']:after {
@@ -367,8 +443,15 @@ animation: bounce 1.5s ease-in-out infinite;
 /* heart button popover */
 
 #my-popover{
+  position: absolute;
+  top: 58%; /* Aligns it below the container */
+  left: 25%; /* Centers it horizontally */
+  transform: translateX(-80%); 
   justify-content: center;
-  margin-top: 7em; 
+  align-items: center;
+  margin-top: 8em; 
+  font-size: 13px;
+  text-align: center;
   padding: 20px;
   border-radius: 8px;
   font-family: sans-serif;
@@ -385,6 +468,7 @@ animation: bounce 1.5s ease-in-out infinite;
 .container {
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
   justify-content: space-around;
   cursor: pointer;

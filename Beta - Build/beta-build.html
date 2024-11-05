@@ -6,6 +6,10 @@
 </head>
 <body>
 
+<header>
+	<h1>Beta Build</h1>
+	<p id="spotify"><a href="https://open.spotify.com/" target="_blank">https://open.spotify.com/</a></p>
+</header>
 <!-- entire spotify album container -->
 
 <div class="spotify-modal">
@@ -44,7 +48,7 @@
 	<svg class="icon icon2" width="70" height="90" viewBox="0 0 172 93" xmlns="http://www.w3.org/2000/svg">
 			<path d="M5 83C2.23858 83 0 85.2386 0 88C0 90.7614 2.23858 93 5 93V83ZM56.9683 75.3579L61.0464 78.2509L61.0464 78.2509L56.9683 75.3579ZM80.5317 42.1421L76.4536 39.2491L76.4536 39.2491L80.5317 42.1421ZM171.5 29.5L121.5 0.632487V58.3675L171.5 29.5ZM5 93H32.4999V83H5V93ZM61.0464 78.2509L84.6098 45.0351L76.4536 39.2491L52.8902 72.4649L61.0464 78.2509ZM105 34.5H130.5V24.5H105V34.5ZM32.4999 93C43.8432 93 54.4832 87.5027 61.0464 78.2509L52.8902 72.4649C48.2022 79.0733 40.6023 83 32.4999 83V93ZM84.6097 45.0351C89.2978 38.4267 96.8977 34.5 105 34.5V24.5C93.6568 24.5 83.0168 29.9973 76.4536 39.2491L84.6097 45.0351Z" fill="currentColor"/>
 	</svg>
-	
+ 
 </div>
 
 <!-- heart button microinteraction -->
@@ -74,6 +78,324 @@
 </div>
 
 <!-- beta description below -->
+	
+<div class="description">
+	<div class="box">
+		<h2>TRIGGERS</h2>
+		<h3>Save Library - Default</h3>
+			<ul>
+				<li>
+					Hover ON
+					<ul>
+						<li> 1 second delay</li>
+					</ul>
+				</li>
+				<li>Hover OFF</li>
+				<li>Mouse Down</li>
+				<li>Mouse Up (Click ON)</li>
+
+			</ul>
+
+		<h3>Save Library - Active</h3>
+			<ul>
+				<li>
+					Hover ON
+					<ul>
+						<li>1 second delay</li>
+					</ul>
+				</li>
+				<li>Hover OFF</li>
+				<li>Mouse Down</li>
+				<li>Mouse Up (Click OFF)</li>
+			</ul>
+
+			<h3>More Options - Default</h3>
+			<ul>
+				<li>Hover ON</li>
+				<ul>
+					<li>1 second delay</li>
+				</ul>
+				<li>Hover OFF</li>
+				<li>Mouse Down</li>
+				<li>Mouse Up (Click ON)</li>
+			</ul>
+
+			<h3>More Options - Active</h3>
+			<ul>
+				<li>Hover ON</li>
+				<ul>
+					<li>1 second delay</li>
+				</ul>
+				<li>Hover OFF</li>
+				<li>Mouse Down</li>
+				<li>Mouse Up (Click ON)</li>
+			</ul>
+
+			<h3>Shuffle Button - Default</h3>
+			<ul>
+				<li>
+					Hover ON
+					<ul>
+						<li>
+							1 second delay
+						</li>
+					</ul>
+				</li>
+				<li>Hover OFF</li>
+				<li>Mouse Down</li>
+				<li>Mouse Up (Click OFF)</li>
+			</ul>
+
+			<h3>Shuffle Button - Active</h3>
+			<ul>
+				<li>
+					Hover ON
+					<ul>
+						<li>
+							1 second delay
+						</li>
+					</ul>
+				</li>
+				<li>Hover OFF</li>
+				<li>Mouse Down</li>
+				<li>Mouse Up (Click OFF)</li>
+			</ul>
+	</div>
+
+	<div class="box">
+	<h2>RULES</h2>
+			<h3>Save Library - Default</h3>
+			<ul>
+				<li>Hover ON - Cursor changes to finger, scale changes to 110%</li>
+					<ul>
+						<li>1 second delay "Save to Your Library" appears as tagline</li>
+					</ul>
+				<li>Hover OFF - Cursor changes back to pointer</li>
+				<ul>
+					<li>Tagline disappears</li>
+				</ul>
+				<li>Mouse Down - Heart icon opacity changes to 50%, scale changes to 100%</li>
+				<li>Mouse Up (Click ON) - Heart icon outline fills in with green, changes to check mark, confetti pops out</li>
+				<li>Database record flag set to "TRUE"</li>
+			</ul>
+
+			<h3>Save Library - Active</h3>
+			<ul>
+				<li>Hover ON - Cursor changes to finger, scale changes to 110%</li>
+				<ul>
+					<li>1 second delay "Remove from Your Library" appears as tagline</li>
+				</ul>
+
+				<li>Hover OFF - Cursor changes back to pointer</li>
+				<ul>
+					<li>Tagline disappears</li>
+				</ul>
+				<li>Mouse Down - Heart icon opacity changes to 50%, scale changes to 100%</li>
+				<li>Mouse Up (Click OFF) - Heart icon outline pulses twice like a heartbeat, then goes back to default outline</li>
+				<li>Database record flag set to "FALSE"</li>
+			</ul>
+
+			<h3>More Options - Default</h3>
+			<ul>
+				<li>Hover ON - Cursor changes to finger, dots move in Y position up and down, scale changes to 110%</li>
+				<ul>
+					<li>1 second delay "More Options" appears as tagline</li>
+				</ul>
+				<li>Hover OFF - Cursor changes back to point</li>
+					<ul>
+						<li>Tagline disappears</li>
+					</ul>
+				<li>Mouse Down -  Dots icon opacity changes to 50%, scale changes to 100%</li>
+				<li>Mouse Up (Click ON) - Dots change Y position, option mode pops up</li>
+			</ul>
+
+			<h3>More Options - Active</h3>
+			<ul>
+				<li>Hover ON - Cursor changes to finger, dots move in Y position up and down, scale changes to 110%</li>
+				<ul>
+					<li>1 second delay "Less Options" appears as tagline</li>
+				</ul>
+				<li>Hover OFF - Cursor changes back to point</li>
+				<ul>
+					<li>Tagline disappears</li>
+				</ul>
+				<li>Mouse Down -  Dots icon opacity changes to 50%, scale changes to 100%</li>
+				<li>Mouse Up (Click OFF) - Dots change Y position, option mode pops up</li>
+			</ul>
+
+
+			<h3>Shuffle Button - Default</h3>
+			<ul>
+				<li>
+					Hover ON - Cursor changes to finger, scale changes to 110%
+					<ul>
+						<li>
+							1 second delay "Enable Shuffle" appears as tagline
+						</li>
+					</ul>
+				</li>
+				<li>Hover OFF - Cursor changes back to pointer</li>
+				<ul>
+					<li>Tagline disappears</li>
+				</ul>
+				<li>Mouse Down -Shuffle icon opacity changes to 50%, scale changes to 100%</li>
+				<li>Mouse Up (Click ON) - Shuffle icon fades into green, both arrows do a Y translation to switch position (up and down)</li>
+			</ul>
+
+			<h3>Shuffle Button - Active</h3>
+			<ul>
+				<li>
+					Hover ON - Cursor changes to pointer, scale changes to 110%
+					<ul>
+						<li>
+							1 second delay "Disable Shuffle" appears as tagline
+						</li>
+					</ul>
+				</li>
+				<li>Hover OFF - Cursor changes back to pointer</li>
+				<ul>
+					<li>Tagline disappears</li>
+				</ul>
+				<li>Mouse Down -Shuffle icon opacity changes to 50%, scale changes to 100%</li>
+				<li>Mouse Up (Click OFF) - Shuffle icon fades back into default color, both arrows do a Y reflection to switch positions (flip)</li>
+			</ul>
+	</div>
+	
+
+	<div class="box">
+		<h2>FEEDBACK</h2>
+		<h3>Save Library - Default</h3>
+		<ul>
+			<li>Hover ON - Cursor changes to finger, scale changes to 110%</li>
+				<ul>
+					<li>1 second delay "Save to Your Library" appears as tagline</li>
+				</ul>
+			<li>Hover OFF - Cursor changes back to pointer</li>
+			<ul>
+				<li>Tagline disappears</li>
+			</ul>
+			<li>Mouse Down - Heart icon opacity changes to 50%, scale changes to 100%</li>
+			<li>Mouse Up (Click ON) - Heart icon outline fills in with green, changes to check mark, confetti pops out</li>
+		</ul>
+
+		<h3>Save Library - Active</h3>
+		<ul>
+			<li>Hover ON - Cursor changes to finger, scale changes to 110%</li>
+			<ul>
+				<li>1 second delay "Remove from Your Library" appears as tagline</li>
+			</ul>
+
+			<li>Hover OFF - Cursor changes back to pointer</li>
+			<ul>
+				<li>Tagline disappears</li>
+			</ul>
+			<li>Mouse Down - Heart icon opacity changes to 50%, scale changes to 100%</li>
+			<li>Mouse Up (Click OFF) - Heart icon outline pulses twice like a heartbeat, then goes back to default outline</li>
+		</ul>
+
+		<h3>More Options - Default</h3>
+		<ul>
+			<li>Hover ON - Cursor changes to finger, dots move in Y position up and down, scale changes to 110%</li>
+			<ul>
+				<li>1 second delay "More Options" appears as tagline</li>
+			</ul>
+			<li>Hover OFF - Cursor changes back to point</li>
+			<ul>
+				<li>Tagline disappears</li>
+			</ul>
+			<li>Mouse Down -  Dots icon opacity changes to 50%, scale changes to 100%</li>
+			<li>Mouse Up (Click ON) - Dots change Y position, option mode pops up</li>
+		</ul>
+
+		<h3>More Options - Active</h3>
+		<ul>
+			<li>Hover ON - Cursor changes to finger, dots move in Y position up and down, scale changes to 110%</li>
+			<ul>
+				<li>1 second delay "Less Options" appears as tagline</li>
+			</ul>
+			<li>Hover OFF - Cursor changes back to point</li>
+			<ul>
+				<li>Tagline disappears</li>
+			</ul>
+			<li>Mouse Down -  Dots icon opacity changes to 50%, scale changes to 100%</li>
+			<li>Mouse Up (Click OFF) - Dots change Y position, option mode pops up</li>
+		</ul>
+
+
+		<h3>Shuffle Button - Default</h3>
+		<ul>
+			<li>
+				Hover ON - Cursor changes to finger, scale changes to 110%
+				<ul>
+					<li>
+						1 second delay "Enable Shuffle" appears as tagline
+					</li>
+				</ul>
+			</li>
+			<li>Hover OFF - Cursor changes back to pointer</li>
+			<ul>
+				<li>Tagline disappears</li>
+			</ul>
+			<li>Mouse Down -Shuffle icon opacity changes to 50%, scale changes to 100%</li>
+			<li>Mouse Up (Click ON) - Shuffle icon fades back into default color, both arrows do a Y reflection to switch positions (flip)</li>
+		</ul>
+
+		<h3>Shuffle Button - Active</h3>
+		<ul>
+			<li>
+				Hover ON - Cursor changes to pointer, scale changes to 110%
+				<ul>
+					<li>
+						1 second delay "Disable Shuffle" appears as tagline
+					</li>
+				</ul>
+			</li>
+			<li>Hover OFF - Cursor changes back to pointer</li>
+			<ul>
+				<li>Tagline disappears</li>
+			</ul>
+			<li>Mouse Down -Shuffle icon opacity changes to 50%, scale changes to 100%</li>
+			<li>Mouse Up (Click OFF) - Shuffle icon fades back into default color, both arrows do a Y reflection to switch positions (flip)</li>
+		</ul>
+
+	</div>
+
+	<div class="box">
+		<h2>LOOPS &amp; MODES</h2>
+			<div class="section">
+			<h3>Save Library</h3>
+			<p>Loops</p>
+			<ul>
+				<li>None</li>
+			</ul>
+			<p>Modes</p>
+				<ul>
+					<li>
+			Save/Removed from Your Library window pops up.
+					</li>
+				</ul>
+
+				<h3>More Options</h3>
+				<p>Loops</p>
+				<ul>
+					<li>None</li>
+				</ul>
+				<p>Modes</p>
+					<ul>
+						<li>
+				Further options windows pops up.
+						</li>
+					</ul>
+
+					<h3>Shuffle Button</h3>
+					<p>Loops &amp; Modes</p>
+					<ul>
+					<li>None</li>
+					</ul>
+				</div>
+		</div>
+</div>
+
 <script src="scripts/main.js"></script>
 
 </body>
