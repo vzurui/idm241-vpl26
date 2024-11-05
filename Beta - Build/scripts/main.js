@@ -51,11 +51,11 @@ function togglePositionAndColor() {
 
   // Toggle positions and flipping of icons using transform
   document.querySelector(".icon1").style.transform = isToggled
-    ? "translateY(160px) scaleY(1)"
-    : "translateY(160px) scaleY(-1)";
+    ? "translateY(-15px) scaleY(1)" // white toggled down arrow
+    : "translateY(-20px) scaleY(-1)"; // green toggled down arrow
   document.querySelector(".icon2").style.transform = isToggled
-    ? "translateY(40px) scaleY(1)"
-    : "translateY(100px) scaleY(-1)";
+    ? "translateY(-115px) scaleY(1)" // white toggled down arrow
+    : "translateY(-100px) scaleY(-1)"; // green toggled up arrow
 
   // Flip the toggle state
   isToggled = !isToggled;

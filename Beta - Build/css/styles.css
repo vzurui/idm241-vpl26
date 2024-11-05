@@ -388,12 +388,12 @@ animation: bounce 1.5s ease-in-out infinite;
 
 .icon1 {
   color: var(--icon1-color); /* Use CSS variable for color */
-  transform: translateY(160px); /* Default Y position */
+  transform: translateY(-15px); /* Default Y position */
 }
 
 .icon2 {
   color: var(--icon2-color); /* Use CSS variable for color */
-  transform: translateY(40px); /* Offset Y position initially */
+  transform: translateY(-115px); /* Offset Y position initially */
 }
 /* play button styling */
 
