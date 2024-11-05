@@ -71,6 +71,7 @@ li {
 	font-size: 2vh;
 	max-width: 35ch;
 	align-items: right;
+  margin-top: 10px;
 }
 
 a:link {
