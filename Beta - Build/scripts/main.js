@@ -34,30 +34,6 @@ icon.addEventListener("change", function () {
 
 // PULSING ANIMATION
 
-const toggleHeart = document.getElementById("toggle-heart");
-const heartLabel = document.querySelector('[for="toggle-heart"]');
-
-toggleHeart.addEventListener("change", function () {
-  if (this.checked) {
-    // User liked the button
-    heartLabel.classList.remove("pulse"); // Ensure pulse class is removed
-    triggerConfetti(); // Call your confetti function here
-  } else {
-    // User unliked the button
-    heartLabel.classList.add("pulse"); // Trigger the pulse animation
-  }
-});
-
-// Prevent the pulse animation from starting on load
-if (!toggleHeart.checked) {
-  heartLabel.classList.remove("pulse");
-}
-
-function triggerConfetti() {
-  // Logic for triggering confetti animation (implement this function)
-  console.log("Confetti burst!");
-}
-
 // TOOL TIP TEXT FOR SHUFFLE
 
 // Select the elements
