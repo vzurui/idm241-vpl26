@@ -86,7 +86,7 @@ a:hover {
 	margin-top: 3em;
 }
 
-.container {
+.description {
 	display: flex;
 	flex-wrap: nowrap;
 	margin: 4em;
@@ -118,7 +118,7 @@ a:hover {
 /* media queries */
 @media screen
 and (max-width: 1200px) {
-	.container {
+	.description {
 		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: 60px;
