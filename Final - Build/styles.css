@@ -205,3 +205,40 @@ a:hover {
 .circle:hover .pause-icon {
   transform: scale(1.4); /* Scale up the icon */
 }
+
+/* SHUFFLE BUTTON */
+
+:root {
+  --icon1-color: #B3B3B3; /* Default color for icon 1 */
+  --icon2-color: #B3B3B3; /* Default color for icon 2 */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  padding: 30px;
+  height: 30%;
+  width: 30%;
+
+}
+
+.icon {
+  position: absolute;
+  transition: transform 0.3s ease, fill 0.3s ease; /* Smooth transition for both position and color */
+}
+
+.icon1 {
+  position: absolute;
+  color: var(--icon1-color); /* Use CSS variable for color */
+  transform: translateY(25px); /* Default Y position */
+}
+
+.icon2 {
+  color: var(--icon2-color); /* Use CSS variable for color */
+  transform: translateY(15px); /* Offset Y position initially */
+}
+

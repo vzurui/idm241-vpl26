@@ -24,3 +24,32 @@ function togglePlayPause(element) {
     pulseRing.style.opacity = 0; // Reset visibility
   }, 600); // Matches the animation duration
 }
+
+//SHUFFLE BUTTON TOGGLE
+
+let isToggled = false;
+
+function togglePositionAndColor() {
+  // Define toggle colors
+  const toggleColor = "#1db954"; // New color on click
+  const defaultColor = "#B3B3B3"; // Default color
+
+  // Determine new colors based on the toggle state
+  const newIcon1Color = isToggled ? defaultColor : toggleColor;
+  const newIcon2Color = isToggled ? defaultColor : toggleColor;
+
+  // Update the CSS variables for each icon's color
+  document.documentElement.style.setProperty("--icon1-color", newIcon1Color);
+  document.documentElement.style.setProperty("--icon2-color", newIcon2Color);
+
+  // Toggle positions and flipping of icons using transform
+  document.querySelector(".icon1").style.transform = isToggled
+    ? "translateY(25px) scaleY(1)"
+    : "translateY(20px) scaleY(-1)";
+  document.querySelector(".icon2").style.transform = isToggled
+    ? "translateY(15px) scaleY(1)"
+    : "translateY(32px) scaleY(-1)";
+
+  // Flip the toggle state
+  isToggled = !isToggled;
+}
