@@ -143,10 +143,10 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: top;
+  align-items: center;
   background-color: #212121;
-  padding: 30px 20px 40px 20px;
-  column-gap: 30px;
+  padding: 20px;
+  column-gap: 20px;
   border-top: 3px solid #000;
 }
 
@@ -219,11 +219,11 @@ a:hover {
   flex-direction: column;
   position: relative;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   cursor: pointer;
   padding: 30px;
-  height: 30%;
-  width: 30%;
+  height: 80px;
+  width: 80px;
 
 }
 
@@ -243,3 +243,258 @@ a:hover {
   transform: translateY(15px); /* Offset Y position initially */
 }
 
+/* heart button */
+
+.large-font {
+  font-size: xxx-large;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.heart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.heart-icon svg {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s, fill 0.5s, stroke 0.5s, stroke-opacity 0.5s;
+}
+
+.heart-icon .heart-path {
+  fill: transparent;
+  stroke: #b3b3b3; /* Default stroke color (black) */
+  transition: fill 0.5s, stroke 0.5s, stroke-opacity 0.5s;
+}
+
+/* Hover effect applies only when the heart is not active */
+.heart-icon:not(.active):hover .heart-path {
+  stroke-opacity: 0.5; /* Reduce stroke opacity on hover */
+}
+
+/* Bubble animation using :before */
+.heart-icon:before {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  content: '';
+  box-sizing: border-box;
+  margin: -2.25rem;
+  border: solid 2.25rem #1db954;
+  width: 4.5rem;
+  height: 4.5rem;
+  transform: scale(0);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+/* Particle animation using :after */
+.heart-icon:after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the particles */
+  border-radius: 50%;
+  content: '';
+  margin: 0;
+  width: 0.375rem;
+  height: 0.375rem;
+  box-shadow: 0.32476rem -3rem 0 #1db954, 
+              -0.32476rem -2.625rem 0 #1db954, 
+              2.54798rem -1.61656rem 0 #1db954, 
+              1.84982rem -1.89057rem 0 #1db954, 
+              2.85252rem 0.98418rem 0 #1db954, 
+              2.63145rem 0.2675rem 0 #1db954, 
+              1.00905rem 2.84381rem 0 #1db954, 
+              1.43154rem 2.22414rem 0 #1db954, 
+              -1.59425rem 2.562rem 0 #1db954, 
+              -0.84635rem 2.50595rem 0 #1db954, 
+              -2.99705rem 0.35095rem 0 #1db954, 
+              -2.48692rem 0.90073rem 0 #1db954, 
+              -2.14301rem -2.12438rem 0 #1db954, 
+              -2.25479rem -1.38275rem 0 #1db954;
+  opacity: 0;
+}
+
+/* Trigger animations when active */
+.heart-icon.active .heart-path {
+  fill: #1db954; /* Fill the heart with green */
+  stroke: #1db954; /* Stroke also turns green */
+}
+
+.heart-icon.active {
+  animation: bounce 0.3s forwards; /* Trigger bounce animation */
+}
+
+.heart-icon.animate-bubble:before {
+  animation: bubble 1s forwards;
+}
+
+.heart-icon.animate-particles:after {
+  animation: particles 1s forwards;
+}
+
+/* Bounce animation keyframes */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Slight scale up */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Bubble animation keyframes */
+@keyframes bubble {
+  15% {
+    transform: scale(1);
+    opacity: 1;
+    border-color: #1db954;
+    border-width: 2.25rem;
+  }
+  30%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+    border-color: #1db954;
+    border-width: 0;
+  }
+}
+
+/* Particles animation keyframes */
+@keyframes particles {
+  0%, 20% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1); /* Centered and small */
+  }
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2); /* Small expansion */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2); /* Disperse the particles */
+  }
+}
+
+
+/* OPTIONS BUTTON STYLING */
+
+/* Center the container */
+.buttons {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  grid-template-columns: repeat(3, auto); /* Adjust grid to auto size based on content */
+  gap: 20px; /* Reduce spacing between buttons */
+  cursor: pointer;
+}
+
+/* Adjust buttons styling */
+.butFrame {
+  position: relative;
+  display: block;
+  background: #b3b3b3; /* Button color */
+  border-radius: 50%;
+  height: 30px; /* Slightly smaller */
+  width: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Button animations */
+.buttons:hover .butFrame:nth-child(1) {
+  animation: bounce 1.5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.buttons:hover .butFrame:nth-child(2) {
+  animation: bounce 1.5s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.buttons:hover .butFrame:nth-child(3) {
+  animation: bounce 1.5s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+/* Bounce animation with higher height */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-15px); /* Increased bounce height */
+  }
+}
+
+/* Tooltip styling */
+.tooltiptext-two {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  bottom: 150%; /* Place it above the container */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext-two {
+  visibility: visible;
+  transition-delay: 0.2s; /* Quick visibility */
+}
+
+/* Menu styling */
+.menu {
+  display: none;
+color: white;
+  position: absolute;
+  top: calc(100% + 10px); /* Position menu below buttons */
+  left: 0;
+  background-color: #535353;
+  border: 1px solid #ccc;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: 	#b3b3b3;
+}

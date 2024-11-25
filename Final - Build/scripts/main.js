@@ -53,3 +53,47 @@ function togglePositionAndColor() {
   // Flip the toggle state
   isToggled = !isToggled;
 }
+
+// HEART BUTTON CLICK
+
+let heartIcon = document.querySelector(".heart-icon");
+
+heartIcon.onclick = function () {
+  if (!heartIcon.classList.contains("active")) {
+    // Add active class to fill the heart and trigger animations
+    heartIcon.classList.add("active");
+
+    // Trigger the bubble and particles animations
+    heartIcon.classList.add("animate-bubble");
+    heartIcon.classList.add("animate-particles");
+
+    // Remove the animation classes after the animation ends
+    setTimeout(() => {
+      heartIcon.classList.remove("animate-bubble");
+      heartIcon.classList.remove("animate-particles");
+    }, 1000); // Match the animation duration (1s)
+  } else {
+    // Remove the active class to unfill the heart (no particles)
+    heartIcon.classList.remove("active");
+  }
+};
+
+// OPTIONS BUTTON TOOL TIP AND MENU
+
+const buttonsContainer = document.querySelector(".buttons");
+const menu = document.querySelector(".menu");
+const tooltipText = document.querySelector(".tooltiptext-two");
+
+// Toggle menu on container click
+buttonsContainer.addEventListener("click", function (event) {
+  event.stopPropagation(); // Prevent event from propagating to document
+  const isMenuVisible = menu.style.display === "block";
+  menu.style.display = isMenuVisible ? "none" : "block";
+  tooltipText.textContent = isMenuVisible ? "More Options" : "Less Options";
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", function () {
+  menu.style.display = "none";
+  tooltipText.textContent = "More Options";
+});
