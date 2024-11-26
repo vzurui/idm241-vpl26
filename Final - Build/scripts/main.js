@@ -1,3 +1,19 @@
+// ALBUM MODAL POP UP
+// Select dialog and buttons
+const dialog = document.querySelector(".modalContent");
+const showButton = document.getElementById("szaButton");
+const closeButton = document.getElementById("closeButton");
+
+// Open the dialog modally
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+// Close the dialog
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
 // PLAY BUTTON PULSE AND TOGGLE
 
 function togglePlayPause(element) {
