@@ -115,6 +115,7 @@ a:hover {
   background-color: #262626;
   padding: 25px 0px 25px 35px;
   align-items: center;
+  filter: drop-shadow(0 5px 10px #121212);
 }
 
 .album-modal img {
@@ -157,6 +158,7 @@ a:hover {
   padding: 20px;
   column-gap: 20px;
   border-top: 3px solid #000;
+  filter: drop-shadow(0 5px 10px #121212);
 }
 
 /* PLAY BUTTON container */
@@ -218,6 +220,31 @@ a:hover {
 
 /* SHUFFLE BUTTON */
 
+/* Shuffle button tooltip styling */
+.tooltiptext-three {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  bottom: -35px; /* Place it below the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Make tooltip visible on hover */
+.container:hover .tooltiptext-three {
+  visibility: visible;
+  opacity: 1;
+}
+
 :root {
   --icon1-color: #B3B3B3; /* Default color for icon 1 */
   --icon2-color: #B3B3B3; /* Default color for icon 2 */
@@ -225,14 +252,13 @@ a:hover {
 
 .container {
   display: flex;
+  justify-content: center;
+  align-items: self-start;
   position: relative;
-  align-items: first baseline;
-  justify-content: right;
   cursor: pointer;
   padding: 10px;
   height: 80px;
   width: 80px;
-
 }
 
 .icon {
@@ -241,14 +267,13 @@ a:hover {
 }
 
 .icon1 {
-  position: absolute;
   color: var(--icon1-color); /* Use CSS variable for color */
-  transform: translateY(25px); /* Default Y position */
+  transform: translateY(15px); /* Default Y position */
 }
 
 .icon2 {
   color: var(--icon2-color); /* Use CSS variable for color */
-  transform: translateY(15px); /* Offset Y position initially */
+  transform: translateY(5px); /* Offset Y position initially */
 }
 
 /* heart button */
@@ -263,8 +288,8 @@ a:hover {
 
 .heart-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-content: center;
   width: 80px;
   height: 80px;
   position: relative;
@@ -405,6 +430,7 @@ a:hover {
 }
 
 
+
 /* OPTIONS BUTTON STYLING */
 
 /* Center the container */
@@ -467,7 +493,7 @@ a:hover {
   text-align: center;
   padding: 5px 10px;
   border-radius: 4px;
-  bottom: 150%; /* Place it above the container */
+  bottom: 100%; /* Place it above the container */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
   white-space: nowrap;

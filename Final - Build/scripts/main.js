@@ -49,7 +49,6 @@ function togglePlayPause(element) {
 }
 
 //SHUFFLE BUTTON TOGGLE
-
 let isToggled = false;
 
 function togglePositionAndColor() {
@@ -67,13 +66,17 @@ function togglePositionAndColor() {
 
   // Toggle positions and flipping of icons using transform
   document.querySelector(".icon1").style.transform = isToggled
-    ? "translateY(25px) scaleY(1)"
-    : "translateY(20px) scaleY(-1)";
-  document.querySelector(".icon2").style.transform = isToggled
     ? "translateY(15px) scaleY(1)"
-    : "translateY(32px) scaleY(-1)";
+    : "translateY(5px) scaleY(-1)";
+  document.querySelector(".icon2").style.transform = isToggled
+    ? "translateY(5px) scaleY(1)"
+    : "translateY(15px) scaleY(-1)";
 
-  // Flip the toggle state
+  // Update the tooltip text
+  const tooltip = document.querySelector(".tooltiptext-three");
+  tooltip.textContent = isToggled ? "Enable Shuffle" : "Disable Shuffle";
+
+  // Toggle the shuffle state
   isToggled = !isToggled;
 }
 
