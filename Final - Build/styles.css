@@ -233,6 +233,7 @@ a:hover {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
+  pointer-events: none
 }
 
 /* Show tooltip on hover */
@@ -261,6 +262,7 @@ a:hover {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: none
 }
 
 /* Make tooltip visible on hover */
@@ -320,6 +322,7 @@ a:hover {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  pointer-events: none
 }
 
 .heart-icon:hover .tooltiptext-heart {
@@ -575,6 +578,7 @@ a:hover {
   transform: translateX(-50%);
   white-space: nowrap;
   z-index: 1;
+  pointer-events: none
 }
 
 .tooltip:hover .tooltiptext-two {
@@ -734,3 +738,180 @@ color: white;
 	margin: -0.75em;
 }
 
+/* media queries */
+
+/* Responsive Styles */
+@media screen
+and (max-width: 1200px) {
+	.description {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 60px;
+    margin: 5em 3em 2em 3em;
+	}
+
+  .spotify-modal {
+    display: grid;
+    grid-template-rows: 80% 20%;
+    margin: 1em 2em;
+  }
+
+  .album-modal {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #262626;
+    padding: 25px 130px;
+    justify-items: left;
+  }
+
+  .album-modal img {
+    justify-content: center;
+    margin-top: 1em;
+  }
+  
+  .album-info {
+    padding: 20px 0 20px 2px;
+  }
+
+  .play-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+  }
+
+  .buttons {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 5px;
+    width: 15px;
+    margin-top: 20px;
+    margin-right: 3em;
+    } 
+
+  .container {
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2em;
+  }
+
+  #my-popover{ /* add to library */
+    position: absolute;
+    top: 109%; /* Aligns it below the container */
+    left: 35%; /* Centers it horizontally */
+    transform: translateX(-80%); 
+    justify-content: center;
+    align-items: center;
+    margin-top: 8em; 
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: sans-serif;
+  }
+
+  .tooltiptext-three {
+    position: absolute;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    bottom: 170%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip:hover .tooltiptext-three {
+    visibility: visible;
+    transition-delay: 1s;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+    margin: 6em 0 0 0;
+  }
+
+  a:link {
+    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+    color: #1db954;
+    font-size: 120%;
+    text-align: center;
+  }
+  
+  a:visited {
+    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+    color: #1db954;
+    font-size: 120%;
+    text-align: center;
+
+  }
+  
+  a:hover {
+    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 120%;
+    text-align: center;
+
+  }
+}
+
+@media screen
+and (max-width: 700px) {
+.spotify-modal {
+  display: grid;
+  grid-template-rows: 80% 20%;
+  margin: 1em 10em;
+}
+
+.album-modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #262626;
+  padding: 25px 40px;
+  justify-items: left;
+}
+
+.album-info {
+  padding: 20px 0 10px 2px;
+  font-size: 90%;
+}
+
+#my-popover{ /* add to library */
+  position: absolute;
+  top: 112%; /* Aligns it below the container */
+  left: 50%; /* Centers it horizontally */
+  transform: translateX(-80%); 
+  justify-content: center;
+  align-items: center;
+  margin-top: 8em; 
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: sans-serif;
+}
+.container {
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 40px;
+}
+
+.buttons {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 5px;
+  width: 15px;
+  margin-top: 20px;
+  margin-right: 5em;
+  } 
+}
