@@ -508,58 +508,91 @@ color: white;
 }
 
 
-/* album microinteraction 
-
-.modalContent {
-  background-color: #262626;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10em;
-  padding: 20px;
-  border-radius: 10px;
-  opacity: 0.92;
-}*/
-
-.modalContent {
-  background-color: #262626;
-  color: white;
+/* album microinteraction */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%; /* Adjust width */
-  margin: auto;
-  padding: 20px;
-  border-radius: 10px;
-  opacity: 0.92;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  border: none; /* Remove border */
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.modalContent img {
-  max-width: 80%;
-  margin-bottom: 20px;
-  border-radius: 5px;
+.modal.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.modalDescription {
-  margin-bottom: 20px;
-  font-size: 1rem;
-}
-
-.modalContent button {
-  background-color: #1db954;
+.modal-content {
+  background-color: 	#212121;
   color: white;
+  padding: 60px 50px;
+  border-radius: 10px;
+  border: 2px solid 		#535353;
+  width: 60%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px; /* Space between image and text */
+}
+
+.modal-content img.modal-image {
+  max-width: 80%;
+  border-radius: 5px;
+  filter: drop-shadow(0 5px 10px #121212);
+}
+
+.modal-description {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.modal-description h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: white;
+  background: #1db954;
   border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.modalContent button:hover {
-  background-color: #169843;
+.close-button:hover {
+  background: #169843;
 }
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

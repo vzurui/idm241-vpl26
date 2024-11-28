@@ -1,17 +1,24 @@
 // ALBUM MODAL POP UP
-// Select dialog and buttons
-const dialog = document.querySelector(".modalContent");
+// Select modal elements
+const modal = document.getElementById("customModal");
 const showButton = document.getElementById("szaButton");
-const closeButton = document.getElementById("closeButton");
+const closeButton = document.getElementById("closeModal");
 
-// Open the dialog modally
+// Open the modal
 showButton.addEventListener("click", () => {
-  dialog.showModal();
+  modal.classList.remove("hidden"); // Show the modal
 });
 
-// Close the dialog
+// Close the modal with fade-out effect
 closeButton.addEventListener("click", () => {
-  dialog.close();
+  modal.classList.add("hidden"); // Trigger fade-out animation
+});
+
+// Close modal if user clicks outside modal-content
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.classList.add("hidden");
+  }
 });
 
 // PLAY BUTTON PULSE AND TOGGLE
