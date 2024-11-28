@@ -24,28 +24,28 @@ window.addEventListener("click", (event) => {
 // PLAY BUTTON PULSE AND TOGGLE
 
 function togglePlayPause(element) {
-  // Toggle icons
   const playIcon = element.querySelector(".play-icon");
   const pauseIcon = element.querySelector(".pause-icon");
+  const tooltipPlay = element.parentElement.querySelector(".tooltip-play");
 
   if (playIcon.style.display === "none") {
     playIcon.style.display = "block";
     pauseIcon.style.display = "none";
+    tooltipPlay.textContent = "Play"; // Update tooltip to "Play"
   } else {
     playIcon.style.display = "none";
     pauseIcon.style.display = "block";
+    tooltipPlay.textContent = "Pause"; // Update tooltip to "Pause"
   }
 
-  // Trigger the burst effect
   const pulseRing = element.querySelector(".pulse-ring");
-  pulseRing.style.opacity = 1; // Ensure the ring is visible
+  pulseRing.style.opacity = 1;
   element.classList.add("active");
 
-  // Remove the active class after the animation ends
   setTimeout(() => {
     element.classList.remove("active");
-    pulseRing.style.opacity = 0; // Reset visibility
-  }, 600); // Matches the animation duration
+    pulseRing.style.opacity = 0;
+  }, 600);
 }
 
 //SHUFFLE BUTTON TOGGLE

@@ -13,7 +13,7 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: 0;
-  background: darkolivegreen;
+  background:#30492e;
   font: 1em verdana, sans-serif;
 }
 
@@ -107,6 +107,7 @@ a:hover {
   border-radius: 10px;
   z-index: 2;
   margin: 2em;
+  margin-bottom: 10em;;
 }
 
 .album-modal {
@@ -163,6 +164,7 @@ a:hover {
 
 /* PLAY BUTTON container */
 
+
 .circle {
   width: 80px;
   height: 80px;
@@ -218,6 +220,28 @@ a:hover {
   transform: scale(1.4); /* Scale up the icon */
 }
 
+.tooltip-play {
+  position: absolute;
+  top: -9px; /* Position the tooltip above the play button */
+  left: 17%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.wrapper:hover .tooltip-play {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 1s; /* Quick visibility */
+}
+
 /* SHUFFLE BUTTON */
 
 /* Shuffle button tooltip styling */
@@ -226,11 +250,11 @@ a:hover {
   visibility: hidden;
   background-color: black;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
-  padding: 5px 10px;
-  border-radius: 4px;
-  bottom: -35px; /* Place it below the button */
+  padding: 10px 10px;
+  border-radius: 5px;
+  top: -15%; /* Place it below the button */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
   white-space: nowrap;
@@ -243,6 +267,7 @@ a:hover {
 .container:hover .tooltiptext-three {
   visibility: visible;
   opacity: 1;
+  transition-delay: 1s; /* Quick visibility */
 }
 
 :root {
@@ -284,11 +309,11 @@ a:hover {
   visibility: hidden;
   background-color: black;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
   padding: 5px 10px;
   border-radius: 4px;
-  bottom: 100%; /* Place it above the container */
+  bottom: 115%; /* Place it above the container */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
   white-space: nowrap;
@@ -300,6 +325,7 @@ a:hover {
 .heart-icon:hover .tooltiptext-heart {
   visibility: visible;
   opacity: 1;
+  transition-delay: 1s; /* Quick visibility */
 }
 
 .large-font {
@@ -455,20 +481,20 @@ a:hover {
 
 /* notification window */
 
-/* Notification Window */
 .notification {
   position: fixed;
-  bottom: 20px;
+  bottom: -96px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #1db954;
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 25px 20px;
   border-radius: 5px;
+  border: 2px solid black;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
@@ -540,7 +566,7 @@ a:hover {
   visibility: hidden;
   background-color: black;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
   padding: 5px 10px;
   border-radius: 4px;
@@ -553,7 +579,7 @@ a:hover {
 
 .tooltip:hover .tooltiptext-two {
   visibility: visible;
-  transition-delay: 0.2s; /* Quick visibility */
+  transition-delay: 1s; /* Quick visibility */
 }
 
 /* Menu styling */
@@ -671,5 +697,40 @@ color: white;
     opacity: 1;
     transform: scale(1);
   }
+}
+
+
+/* description styles */
+
+.section {
+	margin: 0 0 2.5em 0;
+}
+
+#spotify {
+	margin: 3.7em 0;
+	text-align: center;
+}
+
+#interaction {
+	text-align: center;
+	text-decoration: none;
+	font-size: 3vh;
+	margin-top: 3em;
+}
+
+.description {
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 4em;
+	column-gap: 60px;
+}
+
+.box {
+	flex: 1;
+	background-color:	#121212;
+	border: 2px solid #1db954;
+	border-radius: 4px;
+	padding: 15px 30px 30px 30px;
+	margin: -0.75em;
 }
 
