@@ -82,12 +82,22 @@ function togglePositionAndColor() {
 
 // HEART BUTTON CLICK
 
-let heartIcon = document.querySelector(".heart-icon");
+let heartIsActive = false; // Tracks heart button state
+
+const heartIcon = document.querySelector(".heart-icon");
+const heartTooltip = document.querySelector(".tooltiptext-heart");
+const notification = document.querySelector(".notification");
 
 heartIcon.onclick = function () {
   if (!heartIcon.classList.contains("active")) {
     // Add active class to fill the heart and trigger animations
     heartIcon.classList.add("active");
+
+    // Update tooltip text
+    heartTooltip.textContent = "Remove from Your Library";
+
+    // Display "Saved to Library" notification
+    showNotification("Saved to Library");
 
     // Trigger the bubble and particles animations
     heartIcon.classList.add("animate-bubble");
@@ -99,10 +109,32 @@ heartIcon.onclick = function () {
       heartIcon.classList.remove("animate-particles");
     }, 1000); // Match the animation duration (1s)
   } else {
-    // Remove the active class to unfill the heart (no particles)
+    // Remove the active class to unfill the heart
     heartIcon.classList.remove("active");
+
+    // Update tooltip text
+    heartTooltip.textContent = "Add to Your Library";
+
+    // Display "Removed from Library" notification
+    showNotification("Removed from Library");
   }
+
+  heartIsActive = !heartIsActive; // Toggle the state
 };
+
+// Show Notification Function
+function showNotification(message) {
+  // Set the notification message
+  notification.textContent = message;
+
+  // Show the notification
+  notification.classList.add("visible");
+
+  // Hide the notification after 2.5 seconds
+  setTimeout(() => {
+    notification.classList.remove("visible");
+  }, 2500);
+}
 
 // OPTIONS BUTTON TOOL TIP AND MENU
 

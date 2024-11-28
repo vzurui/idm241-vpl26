@@ -278,6 +278,30 @@ a:hover {
 
 /* heart button */
 
+/* Tooltip for Heart Button */
+.tooltiptext-heart {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  bottom: 100%; /* Place it above the container */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.heart-icon:hover .tooltiptext-heart {
+  visibility: visible;
+  opacity: 1;
+}
+
 .large-font {
   font-size: xxx-large;
 }
@@ -429,7 +453,34 @@ a:hover {
   }
 }
 
+/* notification window */
 
+/* Notification Window */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1db954;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.notification.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.notification.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
 
 /* OPTIONS BUTTON STYLING */
 
