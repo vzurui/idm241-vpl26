@@ -22,7 +22,6 @@ header {
   grid-template-rows: 20px 60px;
   align-items: center;
   justify-items: center;
-  padding: 0;
   margin: 4em 0 -1.5em 0;
 }
 
@@ -134,7 +133,7 @@ a:hover {
 }
 
 .album-info {
-  padding: 120px 0 20px 30px;
+  padding: 120px 0  20px 35px;
   transform: scale(1.2);
 }
 
@@ -726,7 +725,7 @@ color: white;
 	display: flex;
 	flex-wrap: nowrap;
 	margin: 4em;
-	column-gap: 60px;
+  gap: 60px;
 }
 
 .box {
@@ -741,14 +740,138 @@ color: white;
 /* media queries */
 
 /* Responsive Styles */
+
+/* Tablet: For screens between 701px and 1200px */
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+  header {
+    grid-template-rows: auto;
+    margin: 2em 0 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 4vh; /* Reduce font size */
+  }
+
+  .description {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4em;
+    column-gap: 60px;
+  }
+
+  .album-modal { /* album div */
+    grid-template-columns: 1fr 1fr; 
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .album-info { /* album div */
+    padding: 0 0 0 10px;
+    transform: scale(1);
+  }
+
+  .album-name { /* album div */
+    text-align: left;
+    font-size: 200%;
+  }
+
+  .album-modal img { /* album div */
+    transform: scale(0.9);
+    justify-content: center;
+    border-radius: 5px;
+    filter: drop-shadow(0 5px 10px #121212);
+  }
+
+  .tooltip-play {
+    position: absolute;
+    top: -9px; /* Position the tooltip above the play button */
+    left: 15.5%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none
+  }
+  
+
+}
+
+/* Mobile: For screens less than or equal to 700px */
+@media screen and (max-width: 700px) {
+  .description {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    row-gap: 20px; 
+    margin: 2em;
+  }
+
+  header {
+    grid-template-rows: auto;
+    margin: 2em 0 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem; /* Reduce font size */
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    padding: 15px;
+    margin: 0;
+  }
+
+  h3 {
+    margin: 1.5em 0;
+  }
+
+  li {
+    font-size: 2vh;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .box {
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .album-modal { /* album responsiveness */
+    grid-template-columns: 1fr; 
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .play-buttons {/* play button */
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+.buttons { /* options button */
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .butFrame { /* options button */
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+
+/* 
 @media screen
 and (max-width: 1200px) {
-	.description {
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: 60px;
-    margin: 5em 3em 2em 3em;
-	}
 
   .spotify-modal {
     display: grid;
@@ -796,10 +919,10 @@ and (max-width: 1200px) {
     margin-top: 2em;
   }
 
-  #my-popover{ /* add to library */
+  #my-popover{ /* add to library 
     position: absolute;
-    top: 109%; /* Aligns it below the container */
-    left: 35%; /* Centers it horizontally */
+    top: 109%; /* Aligns it below the container 
+    left: 35%; /* Centers it horizontally 
     transform: translateX(-80%); 
     justify-content: center;
     align-items: center;
@@ -885,10 +1008,10 @@ and (max-width: 700px) {
   font-size: 90%;
 }
 
-#my-popover{ /* add to library */
+#my-popover{ /* add to library 
   position: absolute;
-  top: 112%; /* Aligns it below the container */
-  left: 50%; /* Centers it horizontally */
+  top: 112%; /* Aligns it below the container 
+  left: 50%; /* Centers it horizontally 
   transform: translateX(-80%); 
   justify-content: center;
   align-items: center;
@@ -914,4 +1037,4 @@ and (max-width: 700px) {
   margin-top: 20px;
   margin-right: 5em;
   } 
-}
+} */
