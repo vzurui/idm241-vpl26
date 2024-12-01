@@ -739,18 +739,18 @@ color: white;
 
 /* media queries */
 
-/* Responsive Styles */
 
 /* Tablet: For screens between 701px and 1200px */
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   header {
     grid-template-rows: auto;
     margin: 2em 0 0;
+    gap: 0;
   }
 
   h1 {
     text-align: center;
-    font-size: 4vh; /* Reduce font size */
+    font-size: 4vh; 
   }
 
   .description {
@@ -785,7 +785,7 @@ color: white;
 
   .tooltip-play {
     position: absolute;
-    top: -9px; /* Position the tooltip above the play button */
+    top: -9px; /* Positions the tooltip above the play button */
     left: 15.5%;
     transform: translateX(-50%);
     background-color: black;
@@ -799,15 +799,53 @@ color: white;
     pointer-events: none
   }
   
+  a:link {
+    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+    color: #1db954;
+    font-size: 140%;
+  }
+  
+
+  a:visited {
+    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+    color: #1db954;
+  }
+  
+  a:hover {
+    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Space between image and text */
+  }
+
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    color: white;
+    background: #1db954;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
 
 }
 
-/* Mobile: For screens less than or equal to 700px */
+/* Mobile: 700px */
 @media screen and (max-width: 700px) {
   .description {
     display: grid; 
     grid-template-columns: 1fr; 
-    row-gap: 20px; 
+    row-gap: 50px; 
     margin: 2em;
   }
 
@@ -818,13 +856,13 @@ color: white;
 
   h1 {
     text-align: center;
-    font-size: 2.5rem; /* Reduce font size */
+    font-size: 2.5rem; 
   }
 
   h2 {
     font-size: 2.5rem;
-    padding: 15px;
-    margin: 0;
+    padding: 25px;
+    margin: -10px;
   }
 
   h3 {
