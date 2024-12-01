@@ -144,11 +144,11 @@ function addMouseDownListeners() {
   // Shuffle button
   const shuffleButton = document.querySelector(".container");
   shuffleButton.addEventListener("mousedown", () => {
-    shuffleButton.style.transform = "scale(0.9)";
+    shuffleButton.style.transform = "0.5";
   });
 
   shuffleButton.addEventListener("mouseup", () => {
-    shuffleButton.style.transform = "scale(1)";
+    shuffleButton.style.opacity = "1";
   });
 
   // Album cover
