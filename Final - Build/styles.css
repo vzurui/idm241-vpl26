@@ -740,14 +740,16 @@ color: white;
 /* Tablet: For screens between 701px and 1200px */
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   header {
-    grid-template-rows: auto;
-    margin: 2em 0 0;
-    gap: 0;
+    margin: 5em 0 1em 0;
+    row-gap: 10px;
   }
 
   h1 {
-    text-align: center;
-    font-size: 4vh; 
+    font-size: 230%;
+  }
+
+  p {
+    font-size: 110%;
   }
 
   .description {
@@ -759,18 +761,19 @@ color: white;
 
   .album-modal { /* album div */
     grid-template-columns: 1fr 1fr; 
-    padding: 15px 20px;
-    gap: 15px;
+    padding: 25px 35px;
+    gap: 20px;
   }
 
   .album-info { /* album div */
     padding: 0 0 0 10px;
     transform: scale(1);
+    margin-left: -5px;
   }
 
   .album-name { /* album div */
     text-align: left;
-    font-size: 200%;
+    font-size: 240%;
   }
 
   .album-modal img { /* album div */
@@ -779,6 +782,26 @@ color: white;
     border-radius: 5px;
     filter: drop-shadow(0 5px 10px #121212);
   }
+
+  .inline-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 30px; 
+  }
+
+  .inline-content h4 {
+    font-size: 1.6rem; 
+    color: white;
+    margin: 0; 
+  }
+
+  .inline-content p {
+    font-size: 1.2rem; 
+    color: #B3B3B3; 
+    margin: 0; 
+  }
+
 
   .tooltip-play {
     position: absolute;
@@ -847,13 +870,12 @@ color: white;
   }
 
   header {
-    grid-template-rows: auto;
-    margin: 2em 0 0;
+    margin: 5em 0 2em 0;
+    row-gap: 10px;
   }
 
   h1 {
-    text-align: center;
-    font-size: 2.5rem; 
+    font-size: 230%;
   }
 
   h2 {
@@ -863,7 +885,8 @@ color: white;
   }
 
   h3 {
-    margin: 1.5em 0;
+    margin: 1.5em 1em;
+    font-size: 2.3vh;
   }
 
   li {
@@ -872,6 +895,7 @@ color: white;
 
   p {
     font-size: 1.5rem;
+    margin: 30px 0 20px 0;
   }
 
   .box {
@@ -882,7 +906,7 @@ color: white;
   .album-modal { /* album div */
     grid-template-columns: 1fr; 
     padding: 55px 30px 30px 30px;
-    gap: 10px;
+    gap: 20px;
   }
 
   .album-info {
@@ -892,7 +916,7 @@ color: white;
   }
 
   .album-name {
-    font-size: 2.3rem; 
+    font-size: 2.6rem; 
     text-align: center; 
   }
 
@@ -900,6 +924,24 @@ color: white;
     transform: scale(1.1); 
     justify-content: center;
     margin: 0 auto; 
+  }
+
+  .inline-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+  }
+
+  .inline-content h4 {
+    font-size: 1.6rem; 
+    color: white;
+    margin: 0; 
+  }
+
+  .inline-content p {
+    font-size: 1.4rem; 
+    color: #B3B3B3; 
+    margin: 0; 
   }
 
   .modal-body {
@@ -921,7 +963,7 @@ color: white;
     justify-content: space-evenly;
     align-items: center;
     background-color: #212121;
-    padding: 20px;
+    padding: 20px 30px;
     column-gap: 20px;
     border-top: 3px solid #000;
     filter: drop-shadow(0 5px 10px #121212);
@@ -945,14 +987,30 @@ color: white;
 
   .heart-container { /*heart button*/
     display: flex;
-    justify-content: left;
-    align-content: left;
-    width: 80px;
-    height: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
     position: relative;
-    display: inline-block;
     cursor: pointer;
   }
   
+  .tooltip-play {
+    position: absolute;
+    top: -9px; /* Positions the tooltip above the play button */
+    left: 14%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none
+  }
+
+
 }
 
