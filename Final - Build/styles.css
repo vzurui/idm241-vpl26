@@ -8,7 +8,6 @@
 
 body {
 	align-items: center;
-	margin: 0;
 	display: flex;
   justify-content: center;
   flex-direction: column;
@@ -139,12 +138,12 @@ a:hover {
 
 .inline-content {
   display: flex;
-  align-items: center; /* Aligns items vertically in the center */
+  align-items: center; 
 }
 
 .inline-content h1,
 .inline-content p {
-  margin: 0 10px; /* Removes default margin for both header and paragraph */
+  margin: 0 10px; 
 }
 
 /* buttons container */
@@ -174,7 +173,6 @@ a:hover {
   justify-content: center;
   cursor: pointer;
   position: relative; /* Important for absolute positioning */
- /* Ensures the pulse doesn't extend outside */
 }
 
 .icon {
@@ -194,7 +192,7 @@ a:hover {
   background-color: #1db954;
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
-  pointer-events: none; /* Prevents interaction with the ring */
+  pointer-events: none; 
 }
 
 .circle.active .pulse-ring {
@@ -213,15 +211,15 @@ a:hover {
   }
 }
 
-/* Apply scaling effect to both play and pause icons */
+/* apply scaling effect to both play and pause icons */
 .circle:hover .play-icon,
 .circle:hover .pause-icon {
-  transform: scale(1.4); /* Scale up the icon */
+  transform: scale(1.4);
 }
 
 .tooltip-play {
   position: absolute;
-  top: -9px; /* Position the tooltip above the play button */
+  top: -9px; 
   left: 17%;
   transform: translateX(-50%);
   background-color: black;
@@ -239,12 +237,12 @@ a:hover {
 .wrapper:hover .tooltip-play {
   visibility: visible;
   opacity: 1;
-  transition-delay: 1s; /* Quick visibility */
+  transition-delay: 1s; /* adjust delay */
 }
 
 /* SHUFFLE BUTTON */
 
-/* Shuffle button tooltip styling */
+/* tooltip styling */
 .tooltiptext-three {
   position: absolute;
   visibility: hidden;
@@ -254,8 +252,8 @@ a:hover {
   text-align: center;
   padding: 10px 10px;
   border-radius: 5px;
-  top: -15%; /* Place it below the button */
-  left: 50%; /* Center horizontally */
+  top: -15%; 
+  left: 50%; 
   transform: translateX(-50%);
   white-space: nowrap;
   z-index: 1;
@@ -268,7 +266,7 @@ a:hover {
 .container:hover .tooltiptext-three {
   visibility: visible;
   opacity: 1;
-  transition-delay: 1s; /* Quick visibility */
+  transition-delay: 1s; 
 }
 
 :root {
@@ -289,16 +287,16 @@ a:hover {
 
 .icon {
   position: absolute;
-  transition: transform 0.3s ease, fill 0.3s ease; /* Smooth transition for both position and color */
+  transition: transform 0.3s ease, fill 0.3s ease; 
 }
 
 .icon1 {
-  color: var(--icon1-color); /* Use CSS variable for color */
+  color: var(--icon1-color); 
   transform: translateY(15px); /* Default Y position */
 }
 
 .icon2 {
-  color: var(--icon2-color); /* Use CSS variable for color */
+  color: var(--icon2-color); 
   transform: translateY(5px); /* Offset Y position initially */
 }
 
@@ -314,8 +312,8 @@ a:hover {
   text-align: center;
   padding: 5px 10px;
   border-radius: 4px;
-  bottom: 115%; /* Place it above the container */
-  left: 50%; /* Center horizontally */
+  bottom: 115%; 
+  left: 50%; 
   transform: translateX(-50%);
   white-space: nowrap;
   z-index: 1;
@@ -327,7 +325,7 @@ a:hover {
 .heart-icon:hover .tooltiptext-heart {
   visibility: visible;
   opacity: 1;
-  transition-delay: 1s; /* Quick visibility */
+  transition-delay: 1s; 
 }
 
 .large-font {
@@ -362,7 +360,7 @@ a:hover {
 
 .heart-icon .heart-path {
   fill: transparent;
-  stroke: #b3b3b3; /* Default stroke color (black) */
+  stroke: #b3b3b3; /* Default stroke color */
   transition: fill 0.5s, stroke 0.5s, stroke-opacity 0.5s;
 }
 
@@ -395,7 +393,7 @@ a:hover {
   z-index: -1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the particles */
+  transform: translate(-50%, -50%); 
   border-radius: 50%;
   content: '';
   margin: 0;
@@ -496,7 +494,6 @@ a:hover {
   border: 2px solid black;
   opacity: 0;
   visibility: hidden;
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
@@ -520,7 +517,7 @@ a:hover {
   width: 80px;
   height: 80px;
   display: flex;
-  grid-template-columns: repeat(3, auto); /* Adjust grid to auto size based on content */
+  grid-template-columns: repeat(3, auto); 
   column-gap: 14px; /* Reduce spacing between buttons */
   cursor: pointer;
 }
@@ -572,8 +569,8 @@ a:hover {
   text-align: center;
   padding: 5px 10px;
   border-radius: 4px;
-  bottom: 100%; /* Place it above the container */
-  left: 50%; /* Center horizontally */
+  bottom: 100%; 
+  left: 50%; 
   transform: translateX(-50%);
   white-space: nowrap;
   z-index: 1;
@@ -582,7 +579,7 @@ a:hover {
 
 .tooltip:hover .tooltiptext-two {
   visibility: visible;
-  transition-delay: 1s; /* Quick visibility */
+  transition-delay: 1s; 
 }
 
 /* Menu styling */
@@ -590,7 +587,7 @@ a:hover {
   display: none;
 color: white;
   position: absolute;
-  top: calc(100% + 10px); /* Position menu below buttons */
+  top: calc(100% + 10px); 
   left: 0;
   background-color: #535353;
   border: 1px solid #ccc;
@@ -621,7 +618,7 @@ color: white;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  background: rgba(0, 0, 0, 0.8); /* transparent */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -637,7 +634,7 @@ color: white;
 }
 
 .modal-content {
-  background-color: 	#212121;
+  background-color: #212121;
   color: white;
   padding: 60px 50px;
   border-radius: 10px;
@@ -882,15 +879,57 @@ color: white;
     margin: 0;
   }
   
-  .album-modal { /* album responsiveness */
+  .album-modal { /* album div */
     grid-template-columns: 1fr; 
-    padding: 10px;
+    padding: 55px 30px 30px 30px;
     gap: 10px;
   }
 
-  .play-buttons {/* play button */
-    flex-direction: column;
-    align-items: stretch;
+  .album-info {
+    padding: 0;
+    text-align: center; 
+    transform: scale(1); 
+  }
+
+  .album-name {
+    font-size: 2.3rem; 
+    text-align: center; 
+  }
+
+  .album-modal img {
+    transform: scale(1.1); 
+    justify-content: center;
+    margin: 0 auto; 
+  }
+
+  .modal-body {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+
+  .close-button {
+    top: 15px;
+    right: 15px;
+    font-size: 2.6rem; 
+    padding: 5px 8px;
+  }
+
+  .play-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #212121;
+    padding: 20px;
+    column-gap: 20px;
+    border-top: 3px solid #000;
+    filter: drop-shadow(0 5px 10px #121212);
+  }
+  /*  */
+
+  .test-box {
+    transform: scale(0.9);
   }
 
 .buttons { /* options button */
@@ -903,176 +942,17 @@ color: white;
     width: 15px;
     height: 15px;
   }
-}
 
-
-
-/* 
-@media screen
-and (max-width: 1200px) {
-
-  .spotify-modal {
-    display: grid;
-    grid-template-rows: 80% 20%;
-    margin: 1em 2em;
-  }
-
-  .album-modal {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #262626;
-    padding: 25px 130px;
-    justify-items: left;
-  }
-
-  .album-modal img {
-    justify-content: center;
-    margin-top: 1em;
-  }
-  
-  .album-info {
-    padding: 20px 0 20px 2px;
-  }
-
-  .play-buttons {
+  .heart-container { /*heart button*/
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex: 1;
-  }
-
-  .buttons {
+    justify-content: left;
+    align-content: left;
+    width: 80px;
+    height: 80px;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 5px;
-    width: 15px;
-    margin-top: 20px;
-    margin-right: 3em;
-    } 
-
-  .container {
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 2em;
-  }
-
-  #my-popover{ /* add to library 
-    position: absolute;
-    top: 109%; /* Aligns it below the container 
-    left: 35%; /* Centers it horizontally 
-    transform: translateX(-80%); 
-    justify-content: center;
-    align-items: center;
-    margin-top: 8em; 
-    font-size: 13px;
-    text-align: center;
-    padding: 20px;
-    border-radius: 8px;
-    font-family: sans-serif;
-  }
-
-  .tooltiptext-three {
-    position: absolute;
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
-    padding: 5px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-    bottom: 170%;
-    left: 50%;
-    transform: translateX(-50%);
+    display: inline-block;
+    cursor: pointer;
   }
   
-  .tooltip:hover .tooltiptext-three {
-    visibility: visible;
-    transition-delay: 1s;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    padding: 0;
-    margin: 6em 0 0 0;
-  }
-
-  a:link {
-    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
-    color: #1db954;
-    font-size: 120%;
-    text-align: center;
-  }
-  
-  a:visited {
-    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
-    color: #1db954;
-    font-size: 120%;
-    text-align: center;
-
-  }
-  
-  a:hover {
-    font-family: 'comfortaa', Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 120%;
-    text-align: center;
-
-  }
 }
 
-@media screen
-and (max-width: 700px) {
-.spotify-modal {
-  display: grid;
-  grid-template-rows: 80% 20%;
-  margin: 1em 10em;
-}
-
-.album-modal {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: #262626;
-  padding: 25px 40px;
-  justify-items: left;
-}
-
-.album-info {
-  padding: 20px 0 10px 2px;
-  font-size: 90%;
-}
-
-#my-popover{ /* add to library 
-  position: absolute;
-  top: 112%; /* Aligns it below the container 
-  left: 50%; /* Centers it horizontally 
-  transform: translateX(-80%); 
-  justify-content: center;
-  align-items: center;
-  margin-top: 8em; 
-  font-size: 11px;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  font-family: sans-serif;
-}
-.container {
-  align-items: center;
-  justify-content: flex-end;
-  margin-left: 40px;
-}
-
-.buttons {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 5px;
-  width: 15px;
-  margin-top: 20px;
-  margin-right: 5em;
-  } 
-} */
