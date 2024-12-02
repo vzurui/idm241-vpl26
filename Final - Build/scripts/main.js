@@ -144,7 +144,7 @@ function addMouseDownListeners() {
   // Shuffle button
   const shuffleButton = document.querySelector(".container");
   shuffleButton.addEventListener("mousedown", () => {
-    shuffleButton.style.transform = "0.5";
+    shuffleButton.style.opacity = "0.5";
   });
 
   shuffleButton.addEventListener("mouseup", () => {
