@@ -287,6 +287,10 @@ a:hover {
   width: 80px;
 }
 
+.container:hover {
+  opacity: 0.5 !important; 
+}
+
 .icon {
   position: absolute;
   transition: transform 0.3s ease, fill 0.3s ease; 
@@ -370,6 +374,19 @@ a:hover {
 .heart-icon:not(.active):hover .heart-path {
   stroke-opacity: 0.5; /* Reduce stroke opacity on hover */
 }
+
+/* Hover effect for the active (filled) heart */
+.heart-icon.active:hover .heart-path {
+  opacity: 0.5; /* Change opacity when hovered */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Ensure the default active state is fully opaque */
+.heart-icon.active .heart-path {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 
 /* Bubble animation using :before */
 .heart-icon:before {

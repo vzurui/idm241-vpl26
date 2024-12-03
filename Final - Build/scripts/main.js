@@ -3,17 +3,23 @@ const modal = document.getElementById("customModal");
 const showButton = document.getElementById("szaButton");
 const closeButton = document.getElementById("closeModal");
 
+// Show modal and reset album cover scale
 showButton.addEventListener("click", () => {
   modal.classList.remove("hidden"); // Show modal
+  showButton.style.transform = "scale(1)"; // Reset scale immediately
 });
 
+// Close modal and reset album cover scale
 closeButton.addEventListener("click", () => {
   modal.classList.add("hidden"); // Hide modal
+  showButton.style.transform = ""; // Reset to CSS hover behavior
 });
 
+// Close modal on click outside and reset scale
 window.addEventListener("click", (event) => {
   if (event.target === modal) {
-    modal.classList.add("hidden"); // Close modal on click outside
+    modal.classList.add("hidden"); // Hide modal
+    showButton.style.transform = ""; // Reset to CSS hover behavior
   }
 });
 
