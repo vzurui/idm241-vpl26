@@ -28,7 +28,7 @@ h1 {
 	font-family: 'comfortaa', 'Courier New', Courier, monospace;
 	text-align: left;
 	font-size: 220%;
-	margin-top: 1.9em;
+	margin-top: 1.5em;
 }
 
 h2 {
@@ -82,4 +82,5 @@ a:visited {
 	border-bottom: 3px solid #1db954;
 	margin-bottom: 2em;
 }
+
 
