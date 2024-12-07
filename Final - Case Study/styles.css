@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'comfortaa';
+	src: url(../Alpha/fonts/comfortaa/Comfortaa-Light.ttf) format('truetype');
+	font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+	--spotify-gray: #535353;
+	--spotify-black: #121212;
+	--spotify-dark-grey: #212121;
+	--spotfy-green: #1db954;
+	--spotify-light-grey: #b3b3b3;
+	--white: #fff;
+}
+
+body {
+	background-color: var(--spotify-black);
+}
+
+h1 {
+	color: var(--white);
+	font-family: 'comfortaa', 'Courier New', Courier, monospace;
+	text-align: center;
+	font-size: 220%;
+}
+
+.hero-image {
+	width: 100%;
+	height: 20%;
+	margin: 0;
+	border-bottom: 2px solid #1db954;
+}
