@@ -83,4 +83,13 @@ a:visited {
 	margin-bottom: 2em;
 }
 
+.user-persona {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	height: auto;
+	margin: 2em 5em;
+}
+
 
