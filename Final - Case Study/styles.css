@@ -75,12 +75,6 @@ a:visited {
 	color: var(--spotfy-green);
 }
 
-.microinteractions video {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .hero-image {
 	width: 100%;
 	height: 20%;
@@ -96,6 +90,12 @@ a:visited {
 	width: 80%;
 	height: auto;
 	margin: 2em 5em;
+}
+
+video {
+	display: flex;
+	justify-self: center;
+	margin-bottom: 3.5em;
 }
 
 
